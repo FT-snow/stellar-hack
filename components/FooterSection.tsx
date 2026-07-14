@@ -30,7 +30,7 @@ export default function FooterSection() {
               </p>
               <p
                 className="text-[9px] font-mono tracking-wider"
-                style={{ color: 'rgba(255,255,255,0.2)' }}
+                style={{ color: 'rgba(255,255,255,0.4)' }}
               >
                 THE SCIENCE CLUB · MUJ
               </p>
@@ -63,7 +63,7 @@ export default function FooterSection() {
         >
           <p
             className="text-[10px] font-mono tracking-wider"
-            style={{ color: 'rgba(255,255,255,0.2)' }}
+            style={{ color: 'rgba(255,255,255,0.4)' }}
           >
             Team COSMOS · Official Event Blueprint · &copy; 2026 COSMOS · MUJ
           </p>

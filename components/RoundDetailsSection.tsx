@@ -207,7 +207,7 @@ function RoundRow({
 
               <p
                 className="mt-6 font-['Inter'] text-[10px] uppercase tracking-wider"
-                style={{ color: 'rgba(255,255,255,0.2)' }}
+                style={{ color: 'rgba(255,255,255,0.4)' }}
               >
                 {round.advance}
               </p>

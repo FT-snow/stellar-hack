@@ -54,7 +54,7 @@ export default function TechStackSection() {
         ))}
       </div>
 
-      <p className="font-mono text-[10px] mt-8" style={{ color: 'rgba(255,255,255,0.2)' }}>
+      <p className="font-mono text-[10px] mt-8" style={{ color: 'rgba(255,255,255,0.4)' }}>
         + any frontend-only framework
       </p>
     </section>

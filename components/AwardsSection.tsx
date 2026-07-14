@@ -60,7 +60,7 @@ export default function AwardsSection() {
         ))}
       </div>
 
-      <p className="font-mono text-[10px] tracking-wider mt-8" style={{ color: 'rgba(255,255,255,0.2)' }}>
+      <p className="font-mono text-[10px] tracking-wider mt-8" style={{ color: 'rgba(255,255,255,0.4)' }}>
         Top 10 featured on COSMOS page · Top 3 win goodies
       </p>
     </section>

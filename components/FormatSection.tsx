@@ -37,7 +37,7 @@ export default function FormatSection() {
           >
             <span
               className="block font-mono text-[10px] tracking-[0.3em] uppercase mb-4"
-              style={{ color: 'rgba(255,255,255,0.3)' }}
+              style={{ color: 'rgba(255,255,255,0.45)' }}
             >
               {stat.label}
             </span>
@@ -64,7 +64,7 @@ export default function FormatSection() {
       <div className="border-t border-white/[0.06] mt-16 pt-8">
         <p
           className="font-mono text-[11px] tracking-wider"
-          style={{ color: 'rgba(255,255,255,0.3)' }}
+          style={{ color: 'rgba(255,255,255,0.45)' }}
         >
           Frontend-only · No backend · Online
         </p>

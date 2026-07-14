@@ -65,7 +65,7 @@ export default function FAQSection() {
               </span>
               <motion.span
                 className="font-mono text-lg shrink-0"
-                style={{ color: 'rgba(255,255,255,0.3)' }}
+                style={{ color: 'rgba(255,255,255,0.45)' }}
                 animate={{ rotate: open === i ? 45 : 0 }}
                 transition={{ duration: 0.25, ease: 'easeInOut' }}
               >

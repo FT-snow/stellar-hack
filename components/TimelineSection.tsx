@@ -121,7 +121,7 @@ export default function TimelineSection() {
               </span>
               <span
                 className="font-mono text-[10px] tracking-wider block mt-2"
-                style={{ color: 'rgba(255,255,255,0.3)' }}
+                style={{ color: 'rgba(255,255,255,0.45)' }}
               >
                 {round.time}
               </span>

@@ -127,7 +127,7 @@ export default function ThemeExplorerSection() {
 
         <p
           className="font-mono text-[10px] tracking-wider mt-8"
-          style={{ color: 'rgba(255,255,255,0.2)' }}
+          style={{ color: 'rgba(255,255,255,0.4)' }}
         >
           Stuck on ideation? Pick a theme — or invent your own universe entirely.
         </p>
