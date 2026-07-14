@@ -5,9 +5,9 @@ import { motion, useInView } from 'framer-motion'
 import { ease } from '@/components/stellar-hack/shared'
 
 const rounds = [
-  { id: 'R1', day: 'DAY 1', time: '10:00 AM – 6:00 PM IST', title: 'UNIVERSE DESIGN CHALLENGE' },
-  { id: 'R2', day: 'DAY 2', time: '10:00 AM – 5:00 PM IST', title: 'PROTOTYPE DEVELOPMENT' },
-  { id: 'R3', day: 'DAY 2', time: '5:30 PM – 9:00 PM IST', title: 'FINAL SHOWCASE & INTERVIEW' },
+  { id: 'R1', time: '10:00 AM – 2:00 PM IST', title: 'UNIVERSE DESIGN CHALLENGE' },
+  { id: 'R2', time: '3:00 PM – 8:00 PM IST', title: 'PROTOTYPE DEVELOPMENT' },
+  { id: 'R3', time: '8:30 PM – 10:00 PM IST', title: 'FINAL SHOWCASE & INTERVIEW' },
 ]
 
 const columnVariant = {
@@ -44,6 +44,15 @@ export default function TimelineSection() {
         TIMELINE
       </h2>
 
+      <div className="mb-12">
+        <span
+          className="font-mono text-xs tracking-[0.3em]"
+          style={{ color: 'rgba(94,234,212,0.5)' }}
+        >
+          JULY 15, 2026 — ALL ROUNDS SAME DAY
+        </span>
+      </div>
+
       {/* Desktop */}
       <div className="hidden md:block relative">
         <div
@@ -70,13 +79,7 @@ export default function TimelineSection() {
               </div>
               <div className="mt-5">
                 <span
-                  className="font-mono text-[10px] tracking-wider block"
-                  style={{ color: 'rgba(255,255,255,0.3)' }}
-                >
-                  {round.day}
-                </span>
-                <span
-                  className="font-mono text-[10px] block mt-1"
+                  className="font-mono text-[10px] block"
                   style={{ color: 'rgba(255,255,255,0.25)' }}
                 >
                   {round.time}
@@ -119,12 +122,6 @@ export default function TimelineSection() {
               <span
                 className="font-mono text-[10px] tracking-wider block mt-2"
                 style={{ color: 'rgba(255,255,255,0.3)' }}
-              >
-                {round.day}
-              </span>
-              <span
-                className="font-mono text-[10px] block mt-1"
-                style={{ color: 'rgba(255,255,255,0.25)' }}
               >
                 {round.time}
               </span>

@@ -44,11 +44,11 @@ const rounds: Round[] = [
     title: 'Prototype Development',
     marks: '50 MARKS',
     description:
-      'Build a frontend dashboard from your Universe/Mission. Any frontend stack, no backend. Kickoff at 10 AM, build 11 AM–4:30 PM. Quiz Challenge during build window.',
+      'Build a frontend dashboard from your Universe/Mission. Any frontend stack, no backend. Kickoff at 3 PM, build 3 PM–8 PM. Quiz Challenge during build window.',
     deliverables: [
       'Working frontend dashboard',
       'Quiz Challenge completion (10 Qs, 5 pts each, max 20 pts)',
-      'Final submission 4:30–5 PM via Unstop',
+      'Final submission 7:30–8 PM via Unstop',
     ],
     evaluation: [
       { label: 'UI/UX Design', score: 15 },

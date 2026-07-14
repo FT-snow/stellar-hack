@@ -47,10 +47,10 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease, delay: 0.9 }}
             >
-              <div>15–16 JUL 2026</div>
+              <div>JULY 15, 2026</div>
               <div className="flex items-center justify-end gap-2">
                 <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#5eead4] animate-pulse" />
-                STATUS: REGISTRATION OPEN
+                1 DAY · REGISTRATION OPEN
               </div>
             </motion.div>
           </div>

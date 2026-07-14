@@ -42,7 +42,7 @@ export default function FormatSection() {
                 display: 'block',
               }}
             >
-              2–4
+              1–4
             </span>
             <span
               className="absolute bottom-2 right-4 md:bottom-4 md:right-8"
@@ -110,7 +110,7 @@ export default function FormatSection() {
                 display: 'block',
               }}
             >
-              2 Days
+              1 Day
             </span>
             <span
               className="absolute bottom-2 right-4 md:bottom-4 md:right-8"
