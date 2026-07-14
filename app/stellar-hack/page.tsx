@@ -1,14 +1,8 @@
 import HeroSection from '@/components/HeroSection'
 import AboutSection from '@/components/AboutSection'
-import DifferentSection from '@/components/DifferentSection'
-import FormatSection from '@/components/FormatSection'
 import ThemeExplorerSection from '@/components/ThemeExplorerSection'
-import TimelineSection from '@/components/TimelineSection'
-import RoundDetailsSection from '@/components/RoundDetailsSection'
-import ScoringSection from '@/components/ScoringSection'
+import HowItWorksSection from '@/components/HowItWorksSection'
 import TechStackSection from '@/components/TechStackSection'
-import AwardsSection from '@/components/AwardsSection'
-import InspirationResourcesSection from '@/components/InspirationResourcesSection'
 import FAQSection from '@/components/FAQSection'
 import FooterSection from '@/components/FooterSection'
 
@@ -32,15 +26,9 @@ export default function StellarHackPage() {
       <div className="relative z-10">
         <HeroSection />
         <AboutSection />
-        <DifferentSection />
-        <FormatSection />
         <ThemeExplorerSection />
-        <TimelineSection />
-        <RoundDetailsSection />
-        <ScoringSection />
+        <HowItWorksSection />
         <TechStackSection />
-        <AwardsSection />
-        <InspirationResourcesSection />
         <FAQSection />
         <FooterSection />
       </div>

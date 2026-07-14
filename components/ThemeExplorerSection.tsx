@@ -22,7 +22,7 @@ export default function ThemeExplorerSection() {
         <div className="flex items-end justify-between mb-6">
           <span
             className="font-mono text-[10px] tracking-[0.5em] uppercase"
-            style={{ color: 'rgba(255,255,255,0.25)' }}
+            style={{ color: 'var(--text-muted)' }}
           >
             THEME EXPLORER
           </span>
@@ -30,8 +30,8 @@ export default function ThemeExplorerSection() {
 
         <div className="flex items-end justify-between mb-14">
           <h2
-            className="font-['Orbitron'] text-5xl md:text-7xl lg:text-8xl tracking-tight"
-            style={{ color: 'rgba(255,255,255,0.92)' }}
+            className="text-5xl md:text-7xl lg:text-8xl tracking-tight"
+            style={{ fontFamily: 'var(--font-orbitron)', color: 'var(--text-primary)' }}
           >
             PICK A THEME
           </h2>
@@ -41,7 +41,7 @@ export default function ThemeExplorerSection() {
               setActive(idx)
             }}
             className="font-mono text-[10px] tracking-[0.5em] border border-white/10 px-4 py-2 hover:bg-white/5 transition-colors duration-300"
-            style={{ color: 'rgba(255,255,255,0.4)' }}
+            style={{ color: 'var(--text-muted)' }}
           >
             SHUFFLE
           </button>
@@ -62,12 +62,12 @@ export default function ThemeExplorerSection() {
                   className="w-full text-left py-7 border-b border-white/[0.04] group"
                 >
                   <h3
-                    className="font-['Orbitron'] text-base md:text-lg font-bold transition-colors duration-300 group-hover:text-[rgba(94,234,212,0.8)]"
-                    style={{ color: isActive ? 'rgba(94,234,212,0.8)' : 'rgba(255,255,255,0.85)' }}
+                    className="text-base md:text-lg font-bold transition-colors duration-300"
+                    style={{ fontFamily: 'var(--font-orbitron)', color: isActive ? 'rgba(94,234,212,0.8)' : 'var(--text-primary)' }}
                   >
                     {t.name}
                   </h3>
-                  <p className="text-sm mt-1.5" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                  <p className="text-sm mt-1.5" style={{ color: 'var(--text-muted)' }}>
                     {t.tagline}
                   </p>
 
@@ -83,7 +83,7 @@ export default function ThemeExplorerSection() {
                         <div className="pt-5 space-y-6">
                           <p
                             className="text-sm md:text-base leading-relaxed"
-                            style={{ color: 'rgba(255,255,255,0.55)' }}
+                            style={{ color: 'var(--text-secondary)' }}
                           >
                             {t.description}
                           </p>
@@ -91,7 +91,7 @@ export default function ThemeExplorerSection() {
                           <div>
                             <span
                               className="font-mono text-[10px] tracking-[0.35em] uppercase"
-                              style={{ color: 'rgba(255,255,255,0.3)' }}
+                              style={{ color: 'var(--text-muted)' }}
                             >
                               POSSIBLE IDEAS
                             </span>
@@ -100,7 +100,7 @@ export default function ThemeExplorerSection() {
                                 <li
                                   key={idea}
                                   className="text-sm pl-4 relative before:content-['—'] before:absolute before:left-0"
-                                  style={{ color: 'rgba(255,255,255,0.5)' }}
+                                  style={{ color: 'var(--text-secondary)' }}
                                 >
                                   {idea}
                                 </li>
@@ -111,13 +111,13 @@ export default function ThemeExplorerSection() {
                           <div>
                             <span
                               className="font-mono text-[10px] tracking-[0.35em] uppercase"
-                              style={{ color: 'rgba(255,255,255,0.3)' }}
+                              style={{ color: 'var(--text-muted)' }}
                             >
                               EXAMPLE PROMPT
                             </span>
                             <p
                               className="text-sm md:text-base mt-2 leading-relaxed"
-                              style={{ color: 'rgba(255,255,255,0.5)' }}
+                              style={{ color: 'var(--text-secondary)' }}
                             >
                               {t.examplePrompt}
                             </p>
@@ -126,7 +126,7 @@ export default function ThemeExplorerSection() {
                           <div>
                             <span
                               className="font-mono text-[10px] tracking-[0.35em] uppercase"
-                              style={{ color: 'rgba(255,255,255,0.3)' }}
+                              style={{ color: 'var(--text-muted)' }}
                             >
                               PINTEREST KEYWORDS
                             </span>
@@ -135,7 +135,7 @@ export default function ThemeExplorerSection() {
                                 <span
                                   key={kw}
                                   className="border border-white/10 text-[10px] font-mono px-2.5 py-1"
-                                  style={{ color: 'rgba(255,255,255,0.4)' }}
+                                  style={{ color: 'var(--text-muted)' }}
                                 >
                                   {kw}
                                 </span>
@@ -154,7 +154,7 @@ export default function ThemeExplorerSection() {
 
         <p
           className="font-mono text-xs tracking-wider mt-8"
-          style={{ color: 'rgba(255,255,255,0.4)' }}
+          style={{ color: 'var(--text-muted)' }}
         >
           Each theme comes with a built-in scenario and seed prompt. Pick one and build your universe around it.
         </p>

@@ -1,19 +1,7 @@
-'use client';
+'use client'
 
-import { useRef } from 'react';
-import { motion } from 'framer-motion';
-
-const aiTools = [
-  'ChatGPT',
-  'Claude',
-  'Gemini',
-  'GitHub Copilot',
-  'Cursor',
-  'Bolt.new',
-  'Lovable',
-  'Replit AI',
-  'v0 by Vercel',
-];
+import { useRef } from 'react'
+import { motion } from 'framer-motion'
 
 const techItems = [
   'HTML5',
@@ -26,22 +14,37 @@ const techItems = [
   'Framer Motion',
   'Three.js',
   'Canvas/WebGL',
-];
+]
+
+const aiTools = [
+  'ChatGPT',
+  'Claude',
+  'Gemini',
+  'GitHub Copilot',
+  'Cursor',
+  'Bolt.new',
+  'Lovable',
+  'Replit AI',
+  'v0 by Vercel',
+]
 
 export default function TechStackSection() {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null)
 
   return (
     <section
       ref={ref}
       className="py-32 md:py-48 px-6 md:px-12 mt-24 md:mt-32 max-w-7xl mx-auto"
     >
-      <p className="font-mono text-[10px] tracking-[0.5em] uppercase mb-6" style={{ color: 'rgba(255,255,255,0.25)' }}>
-        Allowed Tools
-      </p>
+      <span
+        className="font-mono text-[10px] tracking-[0.5em] uppercase block mb-6"
+        style={{ color: 'var(--text-muted)' }}
+      >
+        ALLOWED TOOLS
+      </span>
       <h2
-        className="font-['Orbitron'] text-5xl md:text-7xl lg:text-8xl tracking-tight mb-16"
-        style={{ color: 'rgba(255,255,255,0.92)' }}
+        className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-16"
+        style={{ fontFamily: 'var(--font-orbitron)', color: 'var(--text-primary)' }}
       >
         TECH STACK
       </h2>
@@ -56,23 +59,24 @@ export default function TechStackSection() {
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.4, ease: 'easeOut' }}
           >
-            <span className="font-mono text-xs" style={{ color: 'rgba(94,234,212,0.3)' }}>
-              —
-            </span>
-            <span className="font-mono text-sm tracking-wider" style={{ color: 'rgba(255,255,255,0.45)' }}>
+            <span className="font-mono text-xs" style={{ color: 'rgba(94,234,212,0.3)' }}>—</span>
+            <span className="font-mono text-sm tracking-wider" style={{ color: 'var(--text-muted)' }}>
               {item}
             </span>
           </motion.div>
         ))}
       </div>
 
-      <p className="font-mono text-xs mt-8" style={{ color: 'rgba(255,255,255,0.4)' }}>
+      <p className="font-mono text-xs mt-8" style={{ color: 'var(--text-muted)' }}>
         + any frontend-only framework
       </p>
 
-      <p className="font-mono text-[10px] tracking-[0.5em] uppercase mt-16 mb-6" style={{ color: 'rgba(255,255,255,0.25)' }}>
+      <span
+        className="font-mono text-[10px] tracking-[0.5em] uppercase block mt-16 mb-6"
+        style={{ color: 'var(--text-muted)' }}
+      >
         AI TOOLS ALLOWED
-      </p>
+      </span>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-5">
         {aiTools.map((item) => (
@@ -84,19 +88,17 @@ export default function TechStackSection() {
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.4, ease: 'easeOut' }}
           >
-            <span className="font-mono text-xs" style={{ color: 'rgba(94,234,212,0.3)' }}>
-              —
-            </span>
-            <span className="font-mono text-sm tracking-wider" style={{ color: 'rgba(255,255,255,0.45)' }}>
+            <span className="font-mono text-xs" style={{ color: 'rgba(94,234,212,0.3)' }}>—</span>
+            <span className="font-mono text-sm tracking-wider" style={{ color: 'var(--text-muted)' }}>
               {item}
             </span>
           </motion.div>
         ))}
       </div>
 
-      <p className="font-mono text-xs mt-8" style={{ color: 'rgba(255,255,255,0.4)' }}>
+      <p className="font-mono text-xs mt-8" style={{ color: 'var(--text-muted)' }}>
         Teams should be prepared to explain their implementation during the final interview.
       </p>
     </section>
-  );
+  )
 }

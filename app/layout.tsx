@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Orbitron, Inter } from 'next/font/google'
+import { Orbitron, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 
 const orbitron = Orbitron({
@@ -9,25 +9,25 @@ const orbitron = Orbitron({
   variable: '--font-orbitron',
 })
 
-const inter = Inter({
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-space-grotesk',
 })
 
 export const metadata: Metadata = {
-  title: 'COSMOS · The Science Club · MUJ',
+  title: 'Stellar Hack — The Vibe-a-thon | COSMOS MUJ',
   description:
-    'The official Science Club of Manipal University Jaipur — uniting students driven by curiosity in science, astronomy, technology, and innovation.',
+    'A 2-day vibe-athon by COSMOS — the Science Club of MUJ. Teams of 1–4 imagine a fictional universe, define a mission, and build a frontend-only interactive dashboard. July 15–16, 2026.',
   icons: {
     icon: '/cosmoslogo.png',
   },
   openGraph: {
-    title: 'COSMOS · The Science Club',
+    title: 'Stellar Hack — The Vibe-a-thon',
     description:
-      'Uniting students driven by curiosity in science, astronomy, technology, and innovation at MUJ.',
-    siteName: 'COSMOS',
+      'A 2-day vibe-athon by COSMOS — the Science Club of MUJ. Teams of 1–4 imagine a fictional universe and build a frontend dashboard. July 15–16, 2026.',
+    siteName: 'Stellar Hack',
     type: 'website',
   },
 }
@@ -38,8 +38,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${orbitron.variable} ${inter.variable}`}>
-      <body style={{ fontFamily: 'var(--font-inter)' }}>
+    <html lang="en" className={`${orbitron.variable} ${spaceGrotesk.variable}`}>
+      <body style={{ fontFamily: 'var(--font-space-grotesk)' }}>
         {children}
       </body>
     </html>

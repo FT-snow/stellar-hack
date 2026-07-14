@@ -1,7 +1,7 @@
-'use client';
+'use client'
 
-import { useState, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useRef } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const faqs = [
   {
@@ -36,40 +36,46 @@ const faqs = [
     q: 'What are the judging criteria?',
     a: 'Round 1: Creativity, Universe Design, Mission Design, Dashboard Blueprint, Feasibility. Round 2: UI/UX, Story Implementation, Creativity, Interactivity. Round 3: Presentation, Technical Understanding, Design Decisions, Product Vision.',
   },
-];
+]
 
 export default function FAQSection() {
-  const [open, setOpen] = useState<number | null>(null);
-  const ref = useRef<HTMLDivElement>(null);
+  const [open, setOpen] = useState<number | null>(null)
+  const ref = useRef<HTMLDivElement>(null)
 
   return (
     <section
       ref={ref}
       className="py-32 md:py-48 px-6 md:px-12 mt-24 md:mt-32 max-w-7xl mx-auto"
     >
-      <p className="font-mono text-[10px] tracking-[0.5em] uppercase mb-6" style={{ color: 'rgba(255,255,255,0.25)' }}>
+      <span
+        className="font-mono text-[10px] tracking-[0.5em] uppercase block mb-6"
+        style={{ color: 'var(--text-muted)' }}
+      >
         FAQ
-      </p>
+      </span>
       <h2
-        className="font-['Orbitron'] text-5xl md:text-7xl lg:text-8xl tracking-tight mb-16"
-        style={{ color: 'rgba(255,255,255,0.92)' }}
+        className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-16"
+        style={{ fontFamily: 'var(--font-orbitron)', color: 'var(--text-primary)' }}
       >
         QUESTIONS?
       </h2>
 
       <div className="max-w-3xl">
         {faqs.map((faq, i) => (
-          <div key={i} className="py-7 border-b border-white/[0.04]">
+          <div key={i} className="py-7 border-b" style={{ borderColor: 'var(--border)' }}>
             <button
               className="flex justify-between items-center w-full cursor-pointer text-left"
               onClick={() => setOpen(open === i ? null : i)}
             >
-              <span className="text-base md:text-lg font-medium pr-8" style={{ color: 'rgba(255,255,255,0.75)' }}>
+              <span
+                className="text-base md:text-lg font-medium pr-8"
+                style={{ color: 'var(--text-primary)' }}
+              >
                 {faq.q}
               </span>
               <motion.span
                 className="font-mono text-xl shrink-0"
-                style={{ color: 'rgba(255,255,255,0.45)' }}
+                style={{ color: 'var(--text-muted)' }}
                 animate={{ rotate: open === i ? 45 : 0 }}
                 transition={{ duration: 0.25, ease: 'easeInOut' }}
               >
@@ -86,7 +92,10 @@ export default function FAQSection() {
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
                   className="overflow-hidden"
                 >
-                  <p className="text-sm md:text-base py-4 leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                  <p
+                    className="text-sm md:text-base py-4 leading-relaxed"
+                    style={{ color: 'var(--text-secondary)' }}
+                  >
                     {faq.a}
                   </p>
                 </motion.div>
@@ -96,5 +105,5 @@ export default function FAQSection() {
         ))}
       </div>
     </section>
-  );
+  )
 }

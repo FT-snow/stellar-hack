@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
 import GlobeComponent from '@/components/ui/globe'
 
 const ease = [0.22, 1, 0.36, 1] as const
@@ -110,7 +109,7 @@ export default function HeroSection() {
                 >
                   REGISTER NOW
                 </span>
-                <ArrowRight className="w-3.5 h-3.5 text-white/40 group-hover:text-white/80 group-hover:translate-x-0.5 transition-all duration-300" />
+                <svg className="w-3.5 h-3.5 text-white/40 group-hover:text-white/80 group-hover:translate-x-0.5 transition-all duration-300" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 3l5 5-5 5"/></svg>
               </motion.a>
               <motion.a
                 href="https://chat.whatsapp.com/EcLmNIBMWfr8z3yR9J33uw"
@@ -127,7 +126,7 @@ export default function HeroSection() {
                 >
                   JOIN WHATSAPP GROUP
                 </span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#5eead4]/40 group-hover:text-[#5eead4]/80 group-hover:translate-x-0.5 transition-all duration-300" />
+                <svg className="w-3.5 h-3.5 text-[#5eead4]/40 group-hover:text-[#5eead4]/80 group-hover:translate-x-0.5 transition-all duration-300" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 3l5 5-5 5"/></svg>
               </motion.a>
             </div>
           </div>
