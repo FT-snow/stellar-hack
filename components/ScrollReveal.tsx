@@ -1,10 +1,7 @@
 'use client'
 
-import { useRef, useEffect, type ReactNode } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-gsap.registerPlugin(ScrollTrigger)
+import { type ReactNode } from 'react'
+import { motion, type Variants } from 'framer-motion'
 
 export default function ScrollReveal({
   children,
@@ -13,7 +10,6 @@ export default function ScrollReveal({
   duration = 0.8,
   delay = 0,
   stagger = 0,
-  children: childrenProp,
 }: {
   children?: ReactNode
   className?: string
@@ -22,34 +18,59 @@ export default function ScrollReveal({
   delay?: number
   stagger?: number
 }) {
-  const ref = useRef<HTMLDivElement>(null)
+  const hasStagger = stagger > 0
 
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-
-    const targets = stagger > 0 ? el.children : el
-    const ctx = gsap.context(() => {
-      gsap.from(targets, {
-        opacity: 0,
-        y,
-        duration,
-        delay,
-        stagger: stagger || 0,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 88%',
-          once: true,
+  const parentVariants: Variants = hasStagger
+    ? {
+        hidden: {},
+        visible: {
+          transition: {
+            staggerChildren: stagger,
+            delayChildren: delay,
+          },
         },
-      })
-    })
-    return () => ctx.revert()
-  }, [y, duration, delay, stagger])
+      }
+    : {}
+
+  const childVariants: Variants = {
+    hidden: { opacity: 0, y },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration, ease: [0.22, 1, 0.36, 1] },
+    },
+  }
+
+  if (hasStagger) {
+    return (
+      <motion.div
+        className={className}
+        variants={parentVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+      >
+        {Array.isArray(children)
+          ? children.map((child, i) => (
+              <motion.div key={i} variants={childVariants}>
+                {child}
+              </motion.div>
+            ))
+          : <motion.div variants={childVariants}>{children}</motion.div>
+        }
+      </motion.div>
+    )
+  }
 
   return (
-    <div ref={ref} className={className}>
+    <motion.div
+      className={className}
+      initial={{ opacity: 0, y }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration, delay, ease: [0.22, 1, 0.36, 1] }}
+    >
       {children}
-    </div>
+    </motion.div>
   )
 }
