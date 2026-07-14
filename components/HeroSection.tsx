@@ -104,7 +104,7 @@ export default function HeroSection() {
                 transition={{ duration: 0.7, ease, delay: 1.1 }}
               >
                 <span
-                  className="font-mono text-[10px] md:text-xs tracking-[0.2em] uppercase"
+                  className="font-mono text-[10px] md:text-xs tracking-[0.2em] uppercase link-underline transition-colors duration-300 group-hover:text-white/80"
                   style={{ color: 'rgba(255,255,255,0.45)' }}
                 >
                   REGISTER NOW
@@ -121,7 +121,7 @@ export default function HeroSection() {
                 transition={{ duration: 0.7, ease, delay: 1.3 }}
               >
                 <span
-                  className="font-mono text-[10px] md:text-xs tracking-[0.2em] uppercase"
+                  className="font-mono text-[10px] md:text-xs tracking-[0.2em] uppercase link-underline transition-colors duration-300 group-hover:text-[#5eead4]/80"
                   style={{ color: 'rgba(94,234,212,0.4)' }}
                 >
                   JOIN WHATSAPP GROUP

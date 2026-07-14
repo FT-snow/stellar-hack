@@ -1,7 +1,8 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import ScrollReveal from '@/components/ScrollReveal'
 
 const faqs = [
   {
@@ -18,7 +19,7 @@ const faqs = [
   },
   {
     q: 'Do I need a backend?',
-    a: 'No. This is frontend-only. Build with HTML, CSS, JS, React, or any frontend framework. Backend is optional and will not receive additional marks.',
+    a: 'No. This is frontend-only. Build with HTML, CSS, JS, React, or any frontend framework.',
   },
   {
     q: 'What AI tools are allowed?',
@@ -40,41 +41,39 @@ const faqs = [
 
 export default function FAQSection() {
   const [open, setOpen] = useState<number | null>(null)
-  const ref = useRef<HTMLDivElement>(null)
 
   return (
-    <section
-      ref={ref}
-      className="py-32 md:py-48 px-6 md:px-12 mt-24 md:mt-32 max-w-7xl mx-auto"
-    >
-      <span
-        className="font-mono text-[10px] tracking-[0.5em] uppercase block mb-6"
-        style={{ color: 'var(--text-muted)' }}
-      >
-        FAQ
-      </span>
-      <h2
-        className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-16"
-        style={{ fontFamily: 'var(--font-orbitron)', color: 'var(--text-primary)' }}
-      >
-        QUESTIONS?
-      </h2>
+    <section className="py-32 md:py-48 px-6 md:px-12 mt-24 md:mt-32 max-w-7xl mx-auto">
+      <ScrollReveal>
+        <span
+          className="font-mono text-[10px] tracking-[0.5em] uppercase block mb-6"
+          style={{ color: 'var(--text-muted)' }}
+        >
+          FAQ
+        </span>
+        <h2
+          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-16"
+          style={{ fontFamily: 'var(--font-orbitron)', color: 'var(--text-primary)' }}
+        >
+          QUESTIONS?
+        </h2>
+      </ScrollReveal>
 
-      <div className="max-w-3xl">
+      <ScrollReveal stagger={0.06} className="max-w-3xl">
         {faqs.map((faq, i) => (
           <div key={i} className="py-7 border-b" style={{ borderColor: 'var(--border)' }}>
             <button
-              className="flex justify-between items-center w-full cursor-pointer text-left"
+              className="flex justify-between items-center w-full cursor-pointer text-left group"
               onClick={() => setOpen(open === i ? null : i)}
             >
               <span
-                className="text-base md:text-lg font-medium pr-8"
+                className="text-base md:text-lg font-medium pr-8 transition-colors duration-300 group-hover:text-[var(--accent)]"
                 style={{ color: 'var(--text-primary)' }}
               >
                 {faq.q}
               </span>
               <motion.span
-                className="font-mono text-xl shrink-0"
+                className="font-mono text-xl shrink-0 transition-colors duration-300 group-hover:text-[var(--accent)]"
                 style={{ color: 'var(--text-muted)' }}
                 animate={{ rotate: open === i ? 45 : 0 }}
                 transition={{ duration: 0.25, ease: 'easeInOut' }}
@@ -103,7 +102,7 @@ export default function FAQSection() {
             </AnimatePresence>
           </div>
         ))}
-      </div>
+      </ScrollReveal>
     </section>
   )
 }

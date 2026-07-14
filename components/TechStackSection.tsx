@@ -1,7 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
-import { motion } from 'framer-motion'
+import ScrollReveal from '@/components/ScrollReveal'
 
 const techItems = [
   'HTML5',
@@ -29,72 +28,57 @@ const aiTools = [
 ]
 
 export default function TechStackSection() {
-  const ref = useRef<HTMLDivElement>(null)
-
   return (
-    <section
-      ref={ref}
-      className="py-32 md:py-48 px-6 md:px-12 mt-24 md:mt-32 max-w-7xl mx-auto"
-    >
-      <span
-        className="font-mono text-[10px] tracking-[0.5em] uppercase block mb-6"
-        style={{ color: 'var(--text-muted)' }}
-      >
-        ALLOWED TOOLS
-      </span>
-      <h2
-        className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-16"
-        style={{ fontFamily: 'var(--font-orbitron)', color: 'var(--text-primary)' }}
-      >
-        TECH STACK
-      </h2>
+    <section className="py-32 md:py-48 px-6 md:px-12 mt-24 md:mt-32 max-w-7xl mx-auto">
+      <ScrollReveal>
+        <span
+          className="font-mono text-[10px] tracking-[0.5em] uppercase block mb-6"
+          style={{ color: 'var(--text-muted)' }}
+        >
+          ALLOWED TOOLS
+        </span>
+        <h2
+          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-16"
+          style={{ fontFamily: 'var(--font-orbitron)', color: 'var(--text-primary)' }}
+        >
+          TECH STACK
+        </h2>
+      </ScrollReveal>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-5">
+      <ScrollReveal stagger={0.05} className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-5">
         {techItems.map((item) => (
-          <motion.div
-            key={item}
-            className="flex items-center gap-3"
-            initial={{ opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.4, ease: 'easeOut' }}
-          >
-            <span className="font-mono text-xs" style={{ color: 'rgba(94,234,212,0.3)' }}>—</span>
-            <span className="font-mono text-sm tracking-wider" style={{ color: 'var(--text-muted)' }}>
+          <div key={item} className="flex items-center gap-3 group cursor-default">
+            <span className="font-mono text-xs transition-colors duration-300 group-hover:text-[var(--accent)]" style={{ color: 'rgba(94,234,212,0.3)' }}>—</span>
+            <span className="font-mono text-sm tracking-wider transition-colors duration-300 group-hover:text-[var(--accent)]" style={{ color: 'var(--text-muted)' }}>
               {item}
             </span>
-          </motion.div>
+          </div>
         ))}
-      </div>
+      </ScrollReveal>
 
       <p className="font-mono text-xs mt-8" style={{ color: 'var(--text-muted)' }}>
         + any frontend-only framework
       </p>
 
-      <span
-        className="font-mono text-[10px] tracking-[0.5em] uppercase block mt-16 mb-6"
-        style={{ color: 'var(--text-muted)' }}
-      >
-        AI TOOLS ALLOWED
-      </span>
+      <ScrollReveal>
+        <span
+          className="font-mono text-[10px] tracking-[0.5em] uppercase block mt-16 mb-6"
+          style={{ color: 'var(--text-muted)' }}
+        >
+          AI TOOLS ALLOWED
+        </span>
+      </ScrollReveal>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-5">
+      <ScrollReveal stagger={0.05} className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-5">
         {aiTools.map((item) => (
-          <motion.div
-            key={item}
-            className="flex items-center gap-3"
-            initial={{ opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.4, ease: 'easeOut' }}
-          >
-            <span className="font-mono text-xs" style={{ color: 'rgba(94,234,212,0.3)' }}>—</span>
-            <span className="font-mono text-sm tracking-wider" style={{ color: 'var(--text-muted)' }}>
+          <div key={item} className="flex items-center gap-3 group cursor-default">
+            <span className="font-mono text-xs transition-colors duration-300 group-hover:text-[var(--accent)]" style={{ color: 'rgba(94,234,212,0.3)' }}>—</span>
+            <span className="font-mono text-sm tracking-wider transition-colors duration-300 group-hover:text-[var(--accent)]" style={{ color: 'var(--text-muted)' }}>
               {item}
             </span>
-          </motion.div>
+          </div>
         ))}
-      </div>
+      </ScrollReveal>
 
       <p className="font-mono text-xs mt-8" style={{ color: 'var(--text-muted)' }}>
         Teams should be prepared to explain their implementation during the final interview.

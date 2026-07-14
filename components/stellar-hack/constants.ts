@@ -54,29 +54,6 @@ export const AWARDS = [
   "People's Choice",
 ]
 
-export const R1_EVAL = [
-  { item: 'Creativity & Originality', pts: 10 },
-  { item: 'Universe Design', pts: 5 },
-  { item: 'Mission Design', pts: 5 },
-  { item: 'Dashboard Planning', pts: 5 },
-  { item: 'Presentation & Feasibility', pts: 5 },
-]
-
-export const R2_EVAL = [
-  { item: 'UI/UX Design', pts: 15 },
-  { item: 'Story & Mission Implementation', pts: 10 },
-  { item: 'Creativity & Innovation', pts: 10 },
-  { item: 'Interactivity & Animations', pts: 10 },
-  { item: 'Organizer Discretion', pts: 5 },
-]
-
-export const R3_EVAL = [
-  { item: 'Presentation & Communication', pts: 5 },
-  { item: 'Technical Understanding', pts: 5 },
-  { item: 'Design Decisions & Justification', pts: 5 },
-  { item: 'Overall Product Vision', pts: 5 },
-]
-
 export const FAQS = [
   {
     q: 'When is the event?',
@@ -92,7 +69,7 @@ export const FAQS = [
   },
   {
     q: 'Do I need a backend?',
-    a: 'No. This is frontend-only. Build with HTML, CSS, JS, React, or any frontend framework. Backend is optional and will not receive additional marks.',
+    a: 'No. This is frontend-only. Build with HTML, CSS, JS, React, or any frontend framework.',
   },
   {
     q: 'What AI tools are allowed?',

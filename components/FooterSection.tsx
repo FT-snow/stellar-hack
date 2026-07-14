@@ -57,7 +57,7 @@ export default function FooterSection() {
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-1">
                 <a
                   href="mailto:boiz.prakhar@gmail.com"
-                  className="text-[11px] font-mono tracking-wider hover:text-[rgba(94,234,212,0.6)] transition-colors duration-300"
+                  className="text-[11px] font-mono tracking-wider link-underline transition-colors duration-300 hover:text-[rgba(94,234,212,0.6)]"
                   style={{ color: 'var(--text-muted)' }}
                 >
                   boiz.prakhar@gmail.com
@@ -65,7 +65,7 @@ export default function FooterSection() {
                 <span style={{ color: 'rgba(255,255,255,0.1)' }}>·</span>
                 <a
                   href="tel:+916387332855"
-                  className="text-[11px] font-mono tracking-wider hover:text-[rgba(94,234,212,0.6)] transition-colors duration-300"
+                  className="text-[11px] font-mono tracking-wider link-underline transition-colors duration-300 hover:text-[rgba(94,234,212,0.6)]"
                   style={{ color: 'var(--text-muted)' }}
                 >
                   6387332855
@@ -73,7 +73,7 @@ export default function FooterSection() {
                 <span style={{ color: 'rgba(255,255,255,0.1)' }}>·</span>
                 <a
                   href="tel:+919390297214"
-                  className="text-[11px] font-mono tracking-wider hover:text-[rgba(94,234,212,0.6)] transition-colors duration-300"
+                  className="text-[11px] font-mono tracking-wider link-underline transition-colors duration-300 hover:text-[rgba(94,234,212,0.6)]"
                   style={{ color: 'var(--text-muted)' }}
                 >
                   9390297214
@@ -98,7 +98,7 @@ export default function FooterSection() {
               href="https://chat.whatsapp.com/EcLmNIBMWfr8z3yR9J33uw"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[11px] font-mono tracking-wider hover:text-[rgba(94,234,212,0.6)] transition-colors duration-300"
+              className="text-[11px] font-mono tracking-wider link-underline transition-colors duration-300 hover:text-[rgba(94,234,212,0.6)]"
               style={{ color: 'var(--text-secondary)' }}
             >
               JOIN WHATSAPP
@@ -108,7 +108,7 @@ export default function FooterSection() {
               href="https://unstop.com/hackathons/stellar-hack-manipal-university-mu-jaipur-1707195"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[11px] font-mono tracking-wider hover:text-[rgba(94,234,212,0.6)] transition-colors duration-300"
+              className="text-[11px] font-mono tracking-wider link-underline transition-colors duration-300 hover:text-[rgba(94,234,212,0.6)]"
               style={{ color: 'var(--text-secondary)' }}
             >
               REGISTER ON UNSTOP →

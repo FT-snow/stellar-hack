@@ -36,3 +36,42 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+/* Hover underline — grows from left */
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* Hover accent — color transition to accent */
+.link-accent {
+  transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.link-accent:hover {
+  color: var(--accent);
+}
+
+/* Hover glow — subtle glow on hover */
+.hover-glow {
+  transition: text-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hover-glow:hover {
+  text-shadow: 0 0 20px rgba(94, 234, 212, 0.3);
+}

@@ -1,70 +1,58 @@
 'use client'
 
 import React, { useRef, useState } from 'react'
-import { motion, useInView, AnimatePresence } from 'framer-motion'
-import { ease } from '@/components/stellar-hack/shared'
+import { motion, AnimatePresence } from 'framer-motion'
+import ScrollReveal from '@/components/ScrollReveal'
 
 const events = [
-  { label: 'OPENING CEREMONY', day: 'Day 1 · 9:00 AM' },
-  { label: 'UNIVERSE DESIGN CHALLENGE', day: 'Day 1 · 10:30 AM – 2:00 PM' },
-  { label: 'PROTOTYPE DEVELOPMENT', day: 'Day 1 · 5:00 PM – 9:00 PM' },
-  { label: 'FINAL SHOWCASE', day: 'Day 2 · 10:00 AM – 2:00 PM' },
+  { label: 'OPENING CEREMONY', day: 'Day 1', time: '9:00 AM' },
+  { label: 'UNIVERSE DESIGN CHALLENGE', day: 'Day 1', time: '10:30 AM – 2:00 PM' },
+  { label: 'PROTOTYPE DEVELOPMENT', day: 'Day 1', time: '5:00 PM – 9:00 PM' },
+  { label: 'FINAL SHOWCASE', day: 'Day 2', time: '10:00 AM – 2:00 PM' },
 ]
 
 const rounds = [
   {
     number: '01',
     title: 'Universe Design Challenge',
-    marks: '30 MARKS',
     day: 'DAY 1',
     description:
-      'Teams create their fictional universe before writing any code. Submit ONE PDF/PPT containing Universe Card, Mission Card, and Dashboard Blueprint. Submit via Unstop + Google Form (link shared on WhatsApp group).',
+      'You\'ve picked a theme — now define what goes wrong inside it. What\'s the crisis? The calamity? The challenge? Submit ONE PDF/PPT with your Universe Card (what the world looks like), Mission Card (what went wrong and how you respond), and Dashboard Blueprint (how your dashboard monitors/solves it). Submit via Unstop + Google Form (link on WhatsApp).',
     deliverables: [
-      'Universe Card — name, aesthetics, rules, lore',
-      'Mission Card — problem statement, goals, stakeholders',
-      'Dashboard Blueprint — wireframe, widget plan, data flow',
+      'Universe Card — the world we gave you, your take on it',
+      'Mission Card — the crisis you chose, why it matters, how you respond',
+      'Dashboard Blueprint — wireframe, widgets, data flow',
     ],
-    advance: 'Top ~25–30 teams advance to Round 2.',
+    advance: 'Top teams advance to Round 2.',
   },
   {
     number: '02',
     title: 'Prototype Development',
-    marks: '50 MARKS',
     day: 'DAY 1',
     description:
-      'Build a frontend dashboard from your chosen theme. Any frontend stack, no backend. AI tools are allowed.',
+      'Build a frontend dashboard that responds to the crisis you defined. Monitor it, solve it, visualize it — your dashboard tells the story of how your team handles the mission. Any frontend stack, no backend. AI tools are allowed.',
     deliverables: [
       'Working frontend dashboard',
       'Public GitHub repository',
       'Live deployment link',
       'README with team details',
     ],
-    advance: 'Top 17 teams advance to Round 3.',
+    advance: 'Top teams advance to Round 3.',
   },
   {
     number: '03',
     title: 'Final Showcase & Interview',
-    marks: '20 MARKS',
     day: 'DAY 2',
     description:
-      'Top 17 teams present live. 5-minute demo followed by 5-minute judge Q&A.',
+      'Top teams present live. 5-minute demo followed by 5-minute judge Q&A.',
     deliverables: [
       'Live demo presentation (5 min)',
       'Judge Q&A session (5 min)',
       'Final pitch of product vision',
     ],
-    advance: 'Final ranking based on cumulative score (R1 + R2 + R3).',
+    advance: 'Final ranking based on cumulative performance across all rounds.',
   },
 ]
-
-const timelineVariant = {
-  hidden: { opacity: 0, y: 40 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease, delay: i * 0.15 },
-  }),
-}
 
 function RoundRow({
   round,
@@ -81,7 +69,7 @@ function RoundRow({
     <div>
       <button
         onClick={onToggle}
-        className="flex w-full items-center justify-between py-10 md:py-14 text-left transition-colors group"
+        className="flex w-full items-center justify-between py-10 md:py-14 text-left transition-all group hover:pl-4"
         style={{ borderBottom: '1px solid var(--border)' }}
       >
         <div className="flex items-baseline gap-6 md:gap-8">
@@ -106,12 +94,6 @@ function RoundRow({
               }}
             >
               {round.title}
-            </span>
-            <span
-              className="font-mono uppercase tracking-wider text-xs md:text-sm"
-              style={{ color: 'var(--accent)' }}
-            >
-              {round.marks}
             </span>
             <span
               className="font-mono uppercase tracking-widest text-[10px]"
@@ -192,8 +174,6 @@ function RoundRow({
 }
 
 export default function HowItWorksSection() {
-  const ref = useRef<HTMLElement | null>(null)
-  const inView = useInView(ref, { once: true, margin: '-80px' })
   const [openRound, setOpenRound] = useState<number | null>(null)
 
   const handleToggle = (index: number) => {
@@ -201,58 +181,59 @@ export default function HowItWorksSection() {
   }
 
   return (
-    <section
-      ref={ref}
-      className="py-32 md:py-48 px-6 md:px-12 mt-24 md:mt-32"
-    >
+    <section className="py-32 md:py-48 px-6 md:px-12 mt-24 md:mt-32">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <span
-          className="block font-mono text-[10px] tracking-[0.5em] uppercase mb-6"
-          style={{ color: 'var(--text-muted)' }}
-        >
-          HOW IT WORKS
-        </span>
-        <h2
-          className="font-bold tracking-tight mb-20 text-5xl md:text-7xl lg:text-8xl"
-          style={{
-            fontFamily: 'var(--font-orbitron)',
-            color: 'var(--text-primary)',
-          }}
-        >
-          HOW IT WORKS
-        </h2>
+        <ScrollReveal>
+          <span
+            className="block font-mono text-[10px] tracking-[0.5em] uppercase mb-6"
+            style={{ color: 'var(--text-muted)' }}
+          >
+            THE MISSION IS YOURS
+          </span>
+          <h2
+            className="font-bold tracking-tight mb-20 text-5xl md:text-7xl lg:text-8xl"
+            style={{
+              fontFamily: 'var(--font-orbitron)',
+              color: 'var(--text-primary)',
+            }}
+          >
+            HOW IT WORKS
+          </h2>
+        </ScrollReveal>
 
         {/* Timeline — Desktop */}
-        <div className="hidden md:block relative mb-32">
+        <ScrollReveal stagger={0.12} className="hidden md:block relative mb-32">
           <div
             className="absolute left-0 right-0 h-px"
             style={{ top: '16px', backgroundColor: 'var(--border)' }}
           />
-          <div className="grid grid-cols-4">
-            {events.map((event, i) => (
-              <motion.div
-                key={event.label}
-                custom={i}
-                initial="hidden"
-                animate={inView ? 'visible' : 'hidden'}
-                variants={timelineVariant}
-              >
-                <div className="flex items-center gap-3 h-8">
-                  <span
-                    className="font-mono text-sm tracking-[0.3em]"
-                    style={{ color: 'var(--accent)' }}
-                  >
-                    {event.day}
-                  </span>
+          <div className="grid grid-cols-4 gap-4">
+            {events.map((event) => (
+              <div key={event.label}>
+                <div className="flex items-start gap-3 min-h-[32px]">
+                  <div className="flex flex-col pt-0.5">
+                    <span
+                      className="font-mono text-xs tracking-[0.15em]"
+                      style={{ color: 'var(--accent)' }}
+                    >
+                      {event.day}
+                    </span>
+                    <span
+                      className="font-mono text-[10px] tracking-[0.1em]"
+                      style={{ color: 'rgba(94,234,212,0.5)' }}
+                    >
+                      {event.time}
+                    </span>
+                  </div>
                   <div
-                    className="w-2 h-2 rounded-full relative z-10"
+                    className="w-2 h-2 rounded-full relative z-10 shrink-0 mt-1"
                     style={{ backgroundColor: 'var(--accent)', opacity: 0.4 }}
                   />
                 </div>
                 <div className="mt-6">
                   <h3
-                    className="text-lg md:text-xl font-bold"
+                    className="text-base md:text-lg font-bold leading-snug"
                     style={{
                       fontFamily: 'var(--font-orbitron)',
                       color: 'var(--text-primary)',
@@ -261,36 +242,29 @@ export default function HowItWorksSection() {
                     {event.label}
                   </h3>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Timeline — Mobile */}
-        <div className="md:hidden relative mb-24">
+        <ScrollReveal stagger={0.1} className="md:hidden relative mb-24">
           <div
             className="absolute left-[4px] top-[4px] bottom-[4px] w-px"
             style={{ backgroundColor: 'var(--border)' }}
           />
           <div className="space-y-12">
-            {events.map((event, i) => (
-              <motion.div
-                key={event.label}
-                custom={i}
-                initial="hidden"
-                animate={inView ? 'visible' : 'hidden'}
-                variants={timelineVariant}
-                className="relative pl-8"
-              >
+            {events.map((event) => (
+              <div key={event.label} className="relative pl-8">
                 <div
                   className="absolute left-0 top-[4px] w-2 h-2 rounded-full"
                   style={{ backgroundColor: 'var(--accent)', opacity: 0.4 }}
                 />
                 <span
-                  className="font-mono text-sm tracking-[0.3em] block"
+                  className="font-mono text-xs tracking-[0.15em] block"
                   style={{ color: 'var(--accent)' }}
                 >
-                  {event.day}
+                  {event.day} · {event.time}
                 </span>
                 <h3
                   className="text-base font-bold mt-3"
@@ -301,12 +275,13 @@ export default function HowItWorksSection() {
                 >
                   {event.label}
                 </h3>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Round Accordion */}
+        <ScrollReveal stagger={0.08}>
         <div>
           {rounds.map((round, index) => (
             <RoundRow
@@ -317,6 +292,7 @@ export default function HowItWorksSection() {
             />
           ))}
         </div>
+      </ScrollReveal>
       </div>
     </section>
   )

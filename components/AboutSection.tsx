@@ -1,15 +1,23 @@
 'use client'
 
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
-
-const ease = [0.22, 1, 0.36, 1] as const
+import ScrollReveal from '@/components/ScrollReveal'
 
 const steps = [
-  { num: '01', title: 'Create a Universe' },
-  { num: '02', title: 'Define a Mission' },
-  { num: '03', title: 'Prototype the Future' },
-  { num: '04', title: 'Present Your Vision' },
+  {
+    num: '01',
+    title: 'We Give You a Universe',
+    desc: 'Pick from 5 theme categories — Cosmic Frontiers, Digital Futures, Tomorrow\'s Earth, Beyond Human, or Reality Reimagined. The universe is ours. The theme is set.',
+  },
+  {
+    num: '02',
+    title: 'You Choose the Mission',
+    desc: 'What goes wrong in your universe? A crisis? A calamity? A challenge? That\'s your mission. You decide what matters inside this world — then you solve it.',
+  },
+  {
+    num: '03',
+    title: 'Build the Dashboard',
+    desc: 'Turn your mission into a working frontend dashboard that monitors, responds to, or solves the crisis you defined. Pure HTML, CSS, JS, or any framework.',
+  },
 ]
 
 const stats = [
@@ -21,8 +29,8 @@ const stats = [
 const differentiators = [
   {
     number: '01',
-    title: 'Design Before Development',
-    description: 'Every great product starts with a vision. Define your theme, its rules, and its story before writing code.',
+    title: 'We Set the World, You Write the Story',
+    description: 'We give you a universe — its aesthetics, its rules, its setting. But the crisis inside it? The mission? That\'s all you.',
   },
   {
     number: '02',
@@ -31,32 +39,22 @@ const differentiators = [
   },
   {
     number: '03',
-    title: 'Story-Driven Development',
-    description: "Your dashboard isn't just data — it's a narrative. Every widget tells the story of your theme.",
+    title: 'Dashboard as Narrative',
+    description: "Your dashboard isn't just data — it's a story. Every widget tells how your team responds to the crisis you defined.",
   },
   {
     number: '04',
-    title: 'Rapid Prototyping',
-    description: 'Two days to turn imagination into reality. Ship a working prototype that showcases your vision.',
+    title: '48 Hours, Full Build',
+    description: 'Two days to turn your mission into a working prototype. Ship something real.',
   },
 ]
 
 export default function AboutSection() {
-  const ref = useRef<HTMLElement | null>(null)
-  const inView = useInView(ref, { once: true, margin: '-80px' })
-
   return (
-    <section
-      ref={(el) => { ref.current = el! }}
-      className="relative py-32 md:py-48 px-6 md:px-12 mt-24 md:mt-32"
-    >
+    <section className="relative py-32 md:py-48 px-6 md:px-12 mt-24 md:mt-32">
       <div className="max-w-7xl mx-auto">
         {/* Top: Label + Heading + Description */}
-        <motion.div
-          initial={{ opacity: 0, y: 32 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, ease }}
-        >
+        <ScrollReveal>
           <span
             className="font-mono text-[10px] tracking-[0.5em] uppercase block mb-6"
             style={{ color: 'var(--text-muted)' }}
@@ -73,20 +71,16 @@ export default function AboutSection() {
             className="text-base md:text-lg lg:text-xl max-w-3xl leading-relaxed mb-20"
             style={{ color: 'var(--text-secondary)' }}
           >
-            A 2-day vibe-athon by COSMOS — the Science Club of MUJ. Teams of
-            1–4 imagine a fictional universe, define a mission inside it, then
-            build a frontend-only interactive dashboard that brings it to life.
-            No backend. Pure creativity, design, and code. AI tools are welcome.
+            A 2-day vibe-athon by COSMOS — the Science Club of MUJ. We give you
+            a universe. You choose the mission — a crisis, a calamity, a challenge
+            that matters inside that world. Then you build a frontend dashboard
+            to monitor, respond to, or solve it. No backend. Pure creativity,
+            design, and code. AI tools are welcome.
           </p>
-        </motion.div>
+        </ScrollReveal>
 
-        {/* Steps: 4-column grid */}
-        <motion.div
-          initial={{ opacity: 0, y: 32 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, ease, delay: 0.15 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-24"
-        >
+        {/* Steps: 3-column grid */}
+        <ScrollReveal stagger={0.15} className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-24">
           {steps.map((s) => (
             <div key={s.num} className="flex flex-col">
               <span
@@ -96,57 +90,55 @@ export default function AboutSection() {
                 {s.num}
               </span>
               <span
-                className="mt-5 text-sm md:text-base tracking-wider"
-                style={{ color: 'var(--text-secondary)' }}
+                className="mt-5 text-sm md:text-base font-bold tracking-wider"
+                style={{ fontFamily: 'var(--font-orbitron)', color: 'var(--text-primary)' }}
               >
                 {s.title}
               </span>
+              <span
+                className="mt-3 text-sm leading-relaxed"
+                style={{ color: 'var(--text-secondary)' }}
+              >
+                {s.desc}
+              </span>
             </div>
           ))}
-        </motion.div>
+        </ScrollReveal>
 
         {/* Format Stats: 3-column grid */}
-        <motion.div
-          initial={{ opacity: 0, y: 32 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, ease, delay: 0.3 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 mb-24 py-12 border-t border-b"
-          style={{ borderColor: 'var(--border)' }}
-        >
-          {stats.map((stat) => (
-            <div key={stat.label}>
-              <span
-                className="block font-mono text-[10px] tracking-[0.3em] uppercase mb-4"
-                style={{ color: 'var(--text-muted)' }}
-              >
-                {stat.label}
-              </span>
-              <span
-                className="block font-bold tracking-tight leading-none"
-                style={{
-                  fontFamily: 'var(--font-orbitron)',
-                  fontSize: 'clamp(3rem, 8vw, 7rem)',
-                  color: 'var(--text-primary)',
-                }}
-              >
-                {stat.value}
-              </span>
-              <span
-                className="block font-mono text-[11px] tracking-wider mt-4"
-                style={{ color: 'var(--text-muted)' }}
-              >
-                {stat.sub}
-              </span>
-            </div>
-          ))}
-        </motion.div>
+        <ScrollReveal stagger={0.1}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 mb-24 py-12 border-t border-b" style={{ borderColor: 'var(--border)' }}>
+            {stats.map((stat) => (
+              <div key={stat.label}>
+                <span
+                  className="block font-mono text-[10px] tracking-[0.3em] uppercase mb-4"
+                  style={{ color: 'var(--text-muted)' }}
+                >
+                  {stat.label}
+                </span>
+                <span
+                  className="block font-bold tracking-tight leading-none whitespace-nowrap"
+                  style={{
+                    fontFamily: 'var(--font-orbitron)',
+                    fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+                    color: 'var(--text-primary)',
+                  }}
+                >
+                  {stat.value}
+                </span>
+                <span
+                  className="block font-mono text-[11px] tracking-wider mt-4"
+                  style={{ color: 'var(--text-muted)' }}
+                >
+                  {stat.sub}
+                </span>
+              </div>
+            ))}
+          </div>
+        </ScrollReveal>
 
         {/* Differentiators: editorial numbered list */}
-        <motion.div
-          initial={{ opacity: 0, y: 32 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, ease, delay: 0.45 }}
-        >
+        <ScrollReveal>
           <span
             className="font-mono text-[10px] tracking-[0.5em] uppercase block mb-6"
             style={{ color: 'var(--text-muted)' }}
@@ -159,13 +151,11 @@ export default function AboutSection() {
           >
             How It&apos;s Different
           </h3>
-          <div>
-            {differentiators.map((item, index) => (
-              <motion.div
-                key={item.number}
-                initial={{ opacity: 0, y: 24 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+        </ScrollReveal>
+        <div>
+          {differentiators.map((item, index) => (
+            <ScrollReveal key={item.number} delay={index * 0.1}>
+              <div
                 className="flex flex-col md:flex-row gap-6 md:gap-16 pb-10 mb-10 border-b last:border-b-0 last:mb-0 last:pb-0"
                 style={{ borderColor: 'var(--border)' }}
               >
@@ -189,10 +179,10 @@ export default function AboutSection() {
                     {item.description}
                   </p>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
       </div>
     </section>
   )
