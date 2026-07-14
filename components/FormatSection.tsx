@@ -8,7 +8,7 @@ const ease = [0.22, 1, 0.36, 1] as const
 const stats = [
   { value: '1–4', label: 'PER TEAM', sub: 'Solo · Duo · Trio · Squad' },
   { value: 'Online', label: 'FORMAT', sub: 'Fully remote · All submissions via Unstop' },
-  { value: '1 Day', label: 'DURATION', sub: 'July 15, 2026' },
+  { value: '2 Days', label: 'DURATION', sub: 'July 15–16, 2026' },
 ]
 
 export default function FormatSection() {

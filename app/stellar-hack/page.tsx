@@ -8,6 +8,7 @@ import RoundDetailsSection from '@/components/RoundDetailsSection'
 import ScoringSection from '@/components/ScoringSection'
 import TechStackSection from '@/components/TechStackSection'
 import AwardsSection from '@/components/AwardsSection'
+import InspirationResourcesSection from '@/components/InspirationResourcesSection'
 import FAQSection from '@/components/FAQSection'
 import FooterSection from '@/components/FooterSection'
 
@@ -39,6 +40,7 @@ export default function StellarHackPage() {
         <ScoringSection />
         <TechStackSection />
         <AwardsSection />
+        <InspirationResourcesSection />
         <FAQSection />
         <FooterSection />
       </div>

@@ -4,12 +4,10 @@ import { useRef } from 'react';
 import { motion } from 'framer-motion';
 
 const awards = [
-  'Best Overall Prototype',
-  'Best UI/UX Design',
-  'Best Theme Design',
-  'Best Mission Design',
-  'Best Interactive Experience',
-  'Most Innovative Solution',
+  'Best Overall',
+  'Best UI/UX',
+  'Best Universe Design',
+  'Most Innovative',
   "People's Choice",
 ];
 
@@ -61,7 +59,7 @@ export default function AwardsSection() {
       </div>
 
       <p className="font-mono text-xs tracking-wider mt-8" style={{ color: 'rgba(255,255,255,0.4)' }}>
-        Top 10 featured on COSMOS page · Top 3 win goodies
+        Top 3 in each category win goodies · Featured on COSMOS Instagram
       </p>
     </section>
   );

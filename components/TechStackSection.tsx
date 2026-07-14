@@ -3,6 +3,18 @@
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
 
+const aiTools = [
+  'ChatGPT',
+  'Claude',
+  'Gemini',
+  'GitHub Copilot',
+  'Cursor',
+  'Bolt.new',
+  'Lovable',
+  'Replit AI',
+  'v0 by Vercel',
+];
+
 const techItems = [
   'HTML5',
   'CSS3',
@@ -56,6 +68,34 @@ export default function TechStackSection() {
 
       <p className="font-mono text-xs mt-8" style={{ color: 'rgba(255,255,255,0.4)' }}>
         + any frontend-only framework
+      </p>
+
+      <p className="font-mono text-[10px] tracking-[0.5em] uppercase mt-16 mb-6" style={{ color: 'rgba(255,255,255,0.25)' }}>
+        AI TOOLS ALLOWED
+      </p>
+
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-5">
+        {aiTools.map((item) => (
+          <motion.div
+            key={item}
+            className="flex items-center gap-3"
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
+          >
+            <span className="font-mono text-xs" style={{ color: 'rgba(94,234,212,0.3)' }}>
+              —
+            </span>
+            <span className="font-mono text-sm tracking-wider" style={{ color: 'rgba(255,255,255,0.45)' }}>
+              {item}
+            </span>
+          </motion.div>
+        ))}
+      </div>
+
+      <p className="font-mono text-xs mt-8" style={{ color: 'rgba(255,255,255,0.4)' }}>
+        Teams should be prepared to explain their implementation during the final interview.
       </p>
     </section>
   );

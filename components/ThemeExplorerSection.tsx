@@ -2,26 +2,12 @@
 
 import { useState, useRef } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
-
-const THEMES = [
-  { name: 'Aqua Nexus', desc: 'Deep-sea civilization where bioluminescence powers all technology.', seed: 'Rising ocean temperatures threaten to extinguish the light sources that sustain society.' },
-  { name: 'Orbital Station Kepler-7', desc: 'Space station orbiting a dying star.', seed: 'The star is collapsing faster than predicted — evacuate or harness the final energy burst.' },
-  { name: 'Neon Drift', desc: 'Cyberpunk megacity where memories are traded as currency.', seed: 'A black market dealer discovers a memory that could topple the ruling corporation.' },
-  { name: 'Tundra Protocol', desc: 'Arctic research outpost studying an anomalous signal.', seed: "The signal is a distress call from something that shouldn't exist." },
-  { name: 'Verdant Core', desc: 'Post-climate-collapse Earth where forests are sentient.', seed: 'Human settlements must negotiate with the forest collective for resources.' },
-  { name: 'Sand Matrix', desc: 'Desert nomads using ancient tech powered by solar winds.', seed: 'A sandstorm reveals a buried artifact that could restore water to the wastelands.' },
-  { name: 'Chrono Shift', desc: 'Society where time moves differently in districts.', seed: 'A clockmaker discovers the temporal distortion is artificial.' },
-  { name: 'Synth Bloom', desc: 'Bio-engineered ecosystem where organisms are programmed like software.', seed: 'A rogue organism has evolved beyond its code.' },
-  { name: 'Void Relay', desc: 'Interstellar communication hub connecting civilizations.', seed: "A message arrives from a galaxy that shouldn't be able to communicate." },
-  { name: 'Iron Canopy', desc: "Megastructure city where the sky hasn't been seen in 200 years.", seed: 'Engineers discover the canopy is failing.' },
-]
+import { THEMES } from '@/components/stellar-hack/constants'
 
 export default function ThemeExplorerSection() {
   const ref = useRef<HTMLElement | null>(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
   const [active, setActive] = useState<number | null>(null)
-  const [showAll, setShowAll] = useState(false)
-  const visible = showAll ? THEMES : THEMES.slice(0, 6)
 
   return (
     <section
@@ -34,7 +20,10 @@ export default function ThemeExplorerSection() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="flex items-end justify-between mb-6">
-          <span className="font-mono text-[10px] tracking-[0.5em] uppercase" style={{ color: 'rgba(255,255,255,0.25)' }}>
+          <span
+            className="font-mono text-[10px] tracking-[0.5em] uppercase"
+            style={{ color: 'rgba(255,255,255,0.25)' }}
+          >
             THEME EXPLORER
           </span>
         </div>
@@ -50,7 +39,6 @@ export default function ThemeExplorerSection() {
             onClick={() => {
               const idx = Math.floor(Math.random() * THEMES.length)
               setActive(idx)
-              if (!showAll && idx >= 6) setShowAll(true)
             }}
             className="font-mono text-[10px] tracking-[0.5em] border border-white/10 px-4 py-2 hover:bg-white/5 transition-colors duration-300"
             style={{ color: 'rgba(255,255,255,0.4)' }}
@@ -60,11 +48,11 @@ export default function ThemeExplorerSection() {
         </div>
 
         <div className="max-w-3xl">
-          {visible.map((t, i) => {
+          {THEMES.map((t, i) => {
             const isActive = active === i
             return (
               <motion.div
-                key={t.name}
+                key={t.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.5, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
@@ -80,8 +68,9 @@ export default function ThemeExplorerSection() {
                     {t.name}
                   </h3>
                   <p className="text-sm mt-1.5" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                    {t.desc}
+                    {t.tagline}
                   </p>
+
                   <AnimatePresence initial={false}>
                     {isActive && (
                       <motion.div
@@ -91,13 +80,68 @@ export default function ThemeExplorerSection() {
                         transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                         className="overflow-hidden"
                       >
-                        <div className="pt-5">
-                          <span className="font-mono text-[10px] tracking-[0.35em]" style={{ color: 'rgba(255,255,255,0.3)' }}>
-                            MISSION SEED
-                          </span>
-                          <p className="text-sm md:text-base mt-2 leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>
-                            {t.seed}
+                        <div className="pt-5 space-y-6">
+                          <p
+                            className="text-sm md:text-base leading-relaxed"
+                            style={{ color: 'rgba(255,255,255,0.55)' }}
+                          >
+                            {t.description}
                           </p>
+
+                          <div>
+                            <span
+                              className="font-mono text-[10px] tracking-[0.35em] uppercase"
+                              style={{ color: 'rgba(255,255,255,0.3)' }}
+                            >
+                              POSSIBLE IDEAS
+                            </span>
+                            <ul className="mt-2 space-y-1">
+                              {t.possibleIdeas.map((idea) => (
+                                <li
+                                  key={idea}
+                                  className="text-sm pl-4 relative before:content-['—'] before:absolute before:left-0"
+                                  style={{ color: 'rgba(255,255,255,0.5)' }}
+                                >
+                                  {idea}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          <div>
+                            <span
+                              className="font-mono text-[10px] tracking-[0.35em] uppercase"
+                              style={{ color: 'rgba(255,255,255,0.3)' }}
+                            >
+                              EXAMPLE PROMPT
+                            </span>
+                            <p
+                              className="text-sm md:text-base mt-2 leading-relaxed"
+                              style={{ color: 'rgba(255,255,255,0.5)' }}
+                            >
+                              {t.examplePrompt}
+                            </p>
+                          </div>
+
+                          <div>
+                            <span
+                              className="font-mono text-[10px] tracking-[0.35em] uppercase"
+                              style={{ color: 'rgba(255,255,255,0.3)' }}
+                            >
+                              PINTEREST KEYWORDS
+                            </span>
+                            <div className="flex flex-wrap gap-2 mt-2">
+                              {t.pinterestKeywords.map((kw) => (
+                                <span
+                                  key={kw}
+                                  className="border border-white/10 text-[10px] font-mono px-2.5 py-1"
+                                  style={{ color: 'rgba(255,255,255,0.4)' }}
+                                >
+                                  {kw}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
                         </div>
                       </motion.div>
                     )}
@@ -108,28 +152,11 @@ export default function ThemeExplorerSection() {
           })}
         </div>
 
-        {!showAll && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-8"
-          >
-            <button
-              onClick={() => setShowAll(true)}
-              className="font-mono text-[10px] tracking-[0.5em] border border-white/10 px-4 py-2 hover:bg-white/5 transition-colors duration-300"
-              style={{ color: 'rgba(255,255,255,0.4)' }}
-            >
-              SHOW MORE (+{THEMES.length - 6})
-            </button>
-          </motion.div>
-        )}
-
         <p
           className="font-mono text-xs tracking-wider mt-8"
           style={{ color: 'rgba(255,255,255,0.4)' }}
         >
-          Stuck on ideation? Each theme comes with a built-in scenario and seed prompt.
+          Each theme comes with a built-in scenario and seed prompt. Pick one and build your universe around it.
         </p>
       </motion.div>
     </section>

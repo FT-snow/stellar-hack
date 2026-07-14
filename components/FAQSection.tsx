@@ -5,32 +5,36 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const faqs = [
   {
-    q: 'Do I need to know coding?',
-    a: 'No! Round 1 is purely design-based. You can participate with just creative ideas.',
+    q: 'When is the event?',
+    a: 'Stellar Hack runs over 2 days — July 15–16, 2026. Day 1: 9 AM to 9 PM (Opening Ceremony + Rounds 1 & 2). Day 2: 10 AM to 2 PM (Final Showcase & Presentations).',
   },
   {
     q: 'Can I participate alone?',
     a: 'Teams of 1–4 are allowed — solo, duo, trio, or squad. Find teammates on our WhatsApp group.',
   },
   {
-    q: 'Do I need a backend?',
-    a: 'No. This is frontend-only. Build with HTML, CSS, JS, React, or any frontend framework.',
+    q: 'Do I need to know coding?',
+    a: 'No! Round 1 is purely design-based. You can participate with just creative ideas. For Round 2, AI tools like ChatGPT, Claude, and Cursor are allowed to help you build.',
   },
   {
-    q: "What if I don't finish Round 1 deliverables?",
-    a: 'Submit what you have. Partial submissions are still evaluated — quality over completeness.',
+    q: 'Do I need a backend?',
+    a: 'No. This is frontend-only. Build with HTML, CSS, JS, React, or any frontend framework. Backend is optional and will not receive additional marks.',
+  },
+  {
+    q: 'What AI tools are allowed?',
+    a: 'You may use ChatGPT, Claude, Gemini, GitHub Copilot, Cursor, Bolt.new, Lovable, Replit AI, v0 by Vercel, and more. Teams should be prepared to explain their implementation during the final interview.',
   },
   {
     q: 'Is it online?',
-    a: 'Yes. Fully online. Round 1 submissions via Unstop + Google Form (link on WhatsApp group). Round 2 via Unstop.',
+    a: 'Yes. Fully online. Round 1 submissions via Unstop + Google Form (link on WhatsApp group). Round 2 submissions via GitHub + deployment link.',
   },
   {
     q: 'Do I have to use the provided themes?',
-    a: 'No. The Theme Explorer lists 10 curated themes. Pick one and build your dashboard around it.',
+    a: 'Yes. Pick one of the 5 theme categories and build your universe, mission, and dashboard around it.',
   },
   {
-    q: 'How does the Quiz Challenge work?',
-    a: "10 questions dropped anytime via Forms/polls during Round 2. 5 pts each, max 20 pts.",
+    q: 'What are the judging criteria?',
+    a: 'Round 1: Creativity, Universe Design, Mission Design, Dashboard Blueprint, Feasibility. Round 2: UI/UX, Story Implementation, Creativity, Interactivity. Round 3: Presentation, Technical Understanding, Design Decisions, Product Vision.',
   },
 ];
 

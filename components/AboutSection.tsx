@@ -56,10 +56,10 @@ export default function AboutSection() {
             className="text-base md:text-lg lg:text-xl max-w-3xl leading-relaxed mb-20"
             style={{ color: 'rgba(255,255,255,0.5)' }}
           >
-            A 1-day vibe-athon by COSMOS — the Science Club of MUJ. Teams of
+            A 2-day vibe-athon by COSMOS — the Science Club of MUJ. Teams of
             1–4 imagine a fictional universe, define a mission inside it, then
-            build a frontend-only interactive dashboard that solves it. No
-            backend. Pure creativity, design, and code.
+            build a frontend-only interactive dashboard that brings it to life.
+            No backend. Pure creativity, design, and code. AI tools are welcome.
           </motion.p>
 
           <motion.div

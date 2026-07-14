@@ -4,10 +4,11 @@ import React, { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { ease } from '@/components/stellar-hack/shared'
 
-const rounds = [
-  { id: 'R1', title: 'UNIVERSE DESIGN CHALLENGE' },
-  { id: 'R2', title: 'PROTOTYPE DEVELOPMENT' },
-  { id: 'R3', title: 'FINAL SHOWCASE & INTERVIEW' },
+const events = [
+  { label: 'OPENING CEREMONY', day: 'Day 1 · 9:00 AM' },
+  { label: 'UNIVERSE DESIGN CHALLENGE', day: 'Day 1 · 10:30 AM – 2:00 PM' },
+  { label: 'PROTOTYPE DEVELOPMENT', day: 'Day 1 · 5:00 PM – 9:00 PM' },
+  { label: 'FINAL SHOWCASE', day: 'Day 2 · 10:00 AM – 2:00 PM' },
 ]
 
 const columnVariant = {
@@ -49,7 +50,7 @@ export default function TimelineSection() {
           className="font-mono text-sm tracking-[0.2em]"
           style={{ color: 'rgba(94,234,212,0.5)' }}
         >
-          JULY 15, 2026 — ALL ROUNDS SAME DAY
+          JULY 15–16, 2026
         </span>
       </div>
 
@@ -59,10 +60,10 @@ export default function TimelineSection() {
           className="absolute left-0 right-0 h-px bg-white/[0.06]"
           style={{ top: '16px' }}
         />
-        <div className="grid grid-cols-3">
-          {rounds.map((round, i) => (
+        <div className="grid grid-cols-4">
+          {events.map((event, i) => (
             <motion.div
-              key={round.id}
+              key={event.label}
               custom={i}
               initial="hidden"
               animate={inView ? 'visible' : 'hidden'}
@@ -73,7 +74,7 @@ export default function TimelineSection() {
                   className="font-mono text-sm tracking-[0.3em]"
                   style={{ color: '#5eead4' }}
                 >
-                  {round.id}
+                  {event.day}
                 </span>
                 <div className="w-2 h-2 rounded-full bg-[#5eead4]/40 relative z-10" />
               </div>
@@ -85,7 +86,7 @@ export default function TimelineSection() {
                     color: 'rgba(255,255,255,0.85)',
                   }}
                 >
-                  {round.title}
+                  {event.label}
                 </h3>
               </div>
             </motion.div>
@@ -97,9 +98,9 @@ export default function TimelineSection() {
       <div className="md:hidden relative">
         <div className="absolute left-[4px] top-[4px] bottom-[4px] w-px bg-white/[0.06]" />
         <div className="space-y-12">
-          {rounds.map((round, i) => (
+          {events.map((event, i) => (
             <motion.div
-              key={round.id}
+              key={event.label}
               custom={i}
               initial="hidden"
               animate={inView ? 'visible' : 'hidden'}
@@ -111,7 +112,7 @@ export default function TimelineSection() {
                 className="font-mono text-sm tracking-[0.3em] block"
                 style={{ color: '#5eead4' }}
               >
-                {round.id}
+                {event.day}
               </span>
               <h3
                 className="text-base font-bold mt-3"
@@ -120,7 +121,7 @@ export default function TimelineSection() {
                   color: 'rgba(255,255,255,0.85)',
                 }}
               >
-                {round.title}
+                {event.label}
               </h3>
             </motion.div>
           ))}

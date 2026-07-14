@@ -26,7 +26,7 @@ const items = [
     number: '04',
     title: 'Rapid Prototyping',
     description:
-      'One day to turn imagination into reality. Ship a working prototype that showcases your vision.',
+      'Two days to turn imagination into reality. Ship a working prototype that showcases your vision.',
   },
 ]
 
