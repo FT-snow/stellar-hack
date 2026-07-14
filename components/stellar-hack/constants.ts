@@ -94,7 +94,7 @@ export const FAQS = [
   { q: 'Is it online?', a: 'Yes. Fully online. Round 1 submissions via Unstop + Google Form (link on WhatsApp group). Round 2 via Unstop.' },
   {
     q: 'Do I have to use the provided themes?',
-    a: 'No. The Theme Explorer is just for inspiration. You can invent your own universe.',
+    a: 'No. The Theme Explorer lists 10 curated themes. Pick one and build your dashboard around it.',
   },
   {
     q: 'How does the Quiz Challenge work?',
@@ -105,7 +105,7 @@ export const FAQS = [
 export const AWARDS = [
   'Best Overall Prototype',
   'Best UI/UX Design',
-  'Best Universe Design',
+  'Best Theme Design',
   'Best Mission Design',
   'Best Interactive Experience',
   'Most Innovative Solution',
@@ -122,7 +122,7 @@ export const STEPS = [
 export const DIFFERENT = [
   {
     title: 'Design Before Development',
-    desc: 'Every great product starts with a vision. Define your universe, its rules, and its story before writing code.',
+    desc: 'Every great product starts with a vision. Define your theme, its rules, and its story before writing code.',
   },
   {
     title: 'Frontend Focus',
@@ -130,11 +130,11 @@ export const DIFFERENT = [
   },
   {
     title: 'Story-Driven Development',
-    desc: "Your dashboard isn't just data — it's a narrative. Every widget tells the story of your universe.",
+    desc: "Your dashboard isn't just data — it's a narrative. Every widget tells the story of your theme.",
   },
   {
     title: 'Rapid Prototyping',
-    desc: '48 hours to turn imagination into reality. Ship a working prototype that showcases your vision.',
+    desc: 'One day to turn imagination into reality. Ship a working prototype that showcases your vision.',
   },
 ]
 

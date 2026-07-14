@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: 'Do I have to use the provided themes?',
-    a: 'No. The Theme Explorer is just for inspiration. You can invent your own universe.',
+    a: 'No. The Theme Explorer lists 10 curated themes. Pick one and build your dashboard around it.',
   },
   {
     q: 'How does the Quiz Challenge work?',
@@ -55,16 +55,16 @@ export default function FAQSection() {
 
       <div className="max-w-3xl">
         {faqs.map((faq, i) => (
-          <div key={i} className="py-6 border-b border-white/[0.04]">
+          <div key={i} className="py-7 border-b border-white/[0.04]">
             <button
               className="flex justify-between items-center w-full cursor-pointer text-left"
               onClick={() => setOpen(open === i ? null : i)}
             >
-              <span className="text-sm md:text-base font-medium pr-8" style={{ color: 'rgba(255,255,255,0.75)' }}>
+              <span className="text-base md:text-lg font-medium pr-8" style={{ color: 'rgba(255,255,255,0.75)' }}>
                 {faq.q}
               </span>
               <motion.span
-                className="font-mono text-lg shrink-0"
+                className="font-mono text-xl shrink-0"
                 style={{ color: 'rgba(255,255,255,0.45)' }}
                 animate={{ rotate: open === i ? 45 : 0 }}
                 transition={{ duration: 0.25, ease: 'easeInOut' }}
@@ -82,7 +82,7 @@ export default function FAQSection() {
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
                   className="overflow-hidden"
                 >
-                  <p className="text-sm py-4" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                  <p className="text-sm md:text-base py-4 leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
                     {faq.a}
                   </p>
                 </motion.div>

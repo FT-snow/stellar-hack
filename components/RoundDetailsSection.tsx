@@ -44,11 +44,11 @@ const rounds: Round[] = [
     title: 'Prototype Development',
     marks: '50 MARKS',
     description:
-      'Build a frontend dashboard from your Universe/Mission. Any frontend stack, no backend. Kickoff at 3 PM, build 3 PM–8 PM. Quiz Challenge during build window.',
+      'Build a frontend dashboard from your chosen theme. Any frontend stack, no backend.',
     deliverables: [
       'Working frontend dashboard',
       'Quiz Challenge completion (10 Qs, 5 pts each, max 20 pts)',
-      'Final submission 7:30–8 PM via Unstop + Google Form',
+      'Final submission via Unstop + Google Form',
     ],
     evaluation: [
       { label: 'UI/UX Design', score: 15 },
@@ -95,33 +95,42 @@ function RoundRow({
     <div>
       <button
         onClick={onToggle}
-        className="flex w-full items-center justify-between py-8 text-left transition-colors"
-        style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}
+        className="flex w-full items-center justify-between py-10 md:py-14 text-left transition-colors group"
+        style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
       >
-        <div className="flex items-baseline gap-4 md:gap-6">
+        <div className="flex items-baseline gap-6 md:gap-8">
           <span
-            className="font-['Orbitron'] text-2xl font-bold"
-            style={{ color: 'rgba(255,255,255,0.08)' }}
+            className="text-5xl md:text-7xl font-bold leading-none select-none"
+            style={{
+              fontFamily: "'Orbitron', sans-serif",
+              color: isOpen ? 'rgba(94,234,212,0.15)' : 'rgba(255,255,255,0.06)',
+              transition: 'color 0.3s',
+            }}
           >
             {round.number}
           </span>
-          <span
-            className="font-['Orbitron'] text-base font-bold md:text-lg"
-            style={{ color: 'rgba(255,255,255,0.85)' }}
-          >
-            {round.title}
-          </span>
-          <span
-            className="font-['Inter'] text-[10px] uppercase tracking-wider"
-            style={{ color: 'rgba(94,234,212,0.5)' }}
-          >
-            {round.marks}
-          </span>
+          <div className="flex flex-col gap-2">
+            <span
+              className="text-lg md:text-2xl font-bold"
+              style={{
+                fontFamily: "'Orbitron', sans-serif",
+                color: 'rgba(255,255,255,0.85)',
+              }}
+            >
+              {round.title}
+            </span>
+            <span
+              className="text-xs md:text-sm font-mono uppercase tracking-wider"
+              style={{ color: 'rgba(94,234,212,0.5)' }}
+            >
+              {round.marks}
+            </span>
+          </div>
         </div>
 
         <span
-          className="font-['Inter'] text-lg transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)]"
-          style={{ color: 'rgba(255,255,255,0.4)' }}
+          className="text-2xl md:text-3xl transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] shrink-0 ml-4"
+          style={{ color: 'rgba(255,255,255,0.3)' }}
           aria-hidden
         >
           <span
@@ -142,30 +151,30 @@ function RoundRow({
             transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
             className="overflow-hidden"
           >
-            <div ref={contentRef} className="max-w-4xl pb-8 pt-6">
+            <div ref={contentRef} className="max-w-4xl pb-12 pt-8">
               <p
-                className="mb-8 max-w-3xl text-sm leading-relaxed"
-                style={{ color: 'rgba(255,255,255,0.5)' }}
+                className="mb-10 max-w-3xl text-base md:text-lg leading-relaxed"
+                style={{ color: 'rgba(255,255,255,0.55)' }}
               >
                 {round.description}
               </p>
 
               <p
-                className="mb-4 font-['Inter'] text-[9px] uppercase"
+                className="mb-5 text-xs font-mono uppercase"
                 style={{
-                  color: 'rgba(255,255,255,0.25)',
-                  letterSpacing: '0.35em',
+                  color: 'rgba(255,255,255,0.35)',
+                  letterSpacing: '0.4em',
                 }}
               >
                 DELIVERABLES
               </p>
-              <div className="mb-8">
+              <div className="mb-10">
                 {round.deliverables.map((item, i) => (
                   <div
                     key={i}
-                    className="py-3 text-sm"
+                    className="py-4 text-sm md:text-base"
                     style={{
-                      color: 'rgba(255,255,255,0.5)',
+                      color: 'rgba(255,255,255,0.55)',
                       borderBottom: '1px solid rgba(255,255,255,0.04)',
                     }}
                   >
@@ -175,10 +184,10 @@ function RoundRow({
               </div>
 
               <p
-                className="mb-4 font-['Inter'] text-[9px] uppercase"
+                className="mb-5 text-xs font-mono uppercase"
                 style={{
-                  color: 'rgba(255,255,255,0.25)',
-                  letterSpacing: '0.35em',
+                  color: 'rgba(255,255,255,0.35)',
+                  letterSpacing: '0.4em',
                 }}
               >
                 EVALUATION
@@ -187,16 +196,16 @@ function RoundRow({
                 {round.evaluation.map((item, i) => (
                   <div
                     key={i}
-                    className="flex items-center justify-between py-3 text-sm"
+                    className="flex items-center justify-between py-4 text-sm md:text-base"
                     style={{
                       borderBottom: '1px solid rgba(255,255,255,0.04)',
                     }}
                   >
-                    <span style={{ color: 'rgba(255,255,255,0.5)' }}>
+                    <span style={{ color: 'rgba(255,255,255,0.55)' }}>
                       {item.label}
                     </span>
                     <span
-                      className="font-['Inter'] text-[10px] tracking-wider"
+                      className="text-xs font-mono tracking-wider"
                       style={{ color: 'rgba(94,234,212,0.5)' }}
                     >
                       {item.score} pts
@@ -206,8 +215,8 @@ function RoundRow({
               </div>
 
               <p
-                className="mt-6 font-['Inter'] text-[10px] uppercase tracking-wider"
-                style={{ color: 'rgba(255,255,255,0.4)' }}
+                className="mt-8 text-sm font-mono uppercase tracking-wider"
+                style={{ color: 'rgba(94,234,212,0.4)' }}
               >
                 {round.advance}
               </p>
@@ -227,19 +236,26 @@ export default function RoundDetailsSection() {
   };
 
   return (
-    <section
-      className="px-6 md:px-12 mt-24 md:mt-32 py-32 md:py-48"
-    >
+    <section className="px-6 md:px-12 mt-24 md:mt-32 py-32 md:py-48">
       <div className="mx-auto max-w-7xl">
         <p
-          className="mb-6 font-['Inter'] text-[10px] uppercase"
+          className="mb-6 text-xs font-mono uppercase"
           style={{
-            color: 'rgba(255,255,255,0.25)',
+            color: 'rgba(255,255,255,0.3)',
             letterSpacing: '0.5em',
           }}
         >
           ROUND DETAILS
         </p>
+        <h2
+          className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-20"
+          style={{
+            fontFamily: "'Orbitron', sans-serif",
+            color: 'rgba(255,255,255,0.92)',
+          }}
+        >
+          HOW IT WORKS
+        </h2>
 
         <div>
           {rounds.map((round, index) => (

@@ -53,7 +53,7 @@ export default function AboutSection() {
 
           <motion.p
             variants={fadeUp}
-            className="text-base md:text-lg max-w-3xl leading-relaxed mb-20"
+            className="text-base md:text-lg lg:text-xl max-w-3xl leading-relaxed mb-20"
             style={{ color: 'rgba(255,255,255,0.5)' }}
           >
             A 1-day vibe-athon by COSMOS — the Science Club of MUJ. Teams of
@@ -69,7 +69,7 @@ export default function AboutSection() {
             {STEPS.map((s) => (
               <motion.div key={s.num} variants={fadeUp} className="flex flex-col">
                 <span
-                  className="text-6xl md:text-7xl font-bold leading-none select-none"
+                  className="text-6xl md:text-8xl font-bold leading-none select-none"
                   style={{
                     fontFamily: "'Orbitron', sans-serif",
                     color: 'rgba(255,255,255,0.06)',
@@ -78,8 +78,8 @@ export default function AboutSection() {
                   {s.num}
                 </span>
                 <span
-                  className="mt-4 text-xs tracking-wider"
-                  style={{ color: 'rgba(255,255,255,0.5)' }}
+                  className="mt-5 text-sm md:text-base tracking-wider"
+                  style={{ color: 'rgba(255,255,255,0.55)' }}
                 >
                   {s.title}
                 </span>

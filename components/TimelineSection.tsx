@@ -5,9 +5,9 @@ import { motion, useInView } from 'framer-motion'
 import { ease } from '@/components/stellar-hack/shared'
 
 const rounds = [
-  { id: 'R1', time: '10:00 AM – 2:00 PM IST', title: 'UNIVERSE DESIGN CHALLENGE' },
-  { id: 'R2', time: '3:00 PM – 8:00 PM IST', title: 'PROTOTYPE DEVELOPMENT' },
-  { id: 'R3', time: '8:30 PM – 10:00 PM IST', title: 'FINAL SHOWCASE & INTERVIEW' },
+  { id: 'R1', title: 'UNIVERSE DESIGN CHALLENGE' },
+  { id: 'R2', title: 'PROTOTYPE DEVELOPMENT' },
+  { id: 'R3', title: 'FINAL SHOWCASE & INTERVIEW' },
 ]
 
 const columnVariant = {
@@ -44,9 +44,9 @@ export default function TimelineSection() {
         TIMELINE
       </h2>
 
-      <div className="mb-12">
+      <div className="mb-16">
         <span
-          className="font-mono text-xs tracking-[0.3em]"
+          className="font-mono text-sm tracking-[0.2em]"
           style={{ color: 'rgba(94,234,212,0.5)' }}
         >
           JULY 15, 2026 — ALL ROUNDS SAME DAY
@@ -57,7 +57,7 @@ export default function TimelineSection() {
       <div className="hidden md:block relative">
         <div
           className="absolute left-0 right-0 h-px bg-white/[0.06]"
-          style={{ top: '12px' }}
+          style={{ top: '16px' }}
         />
         <div className="grid grid-cols-3">
           {rounds.map((round, i) => (
@@ -68,24 +68,18 @@ export default function TimelineSection() {
               animate={inView ? 'visible' : 'hidden'}
               variants={columnVariant}
             >
-              <div className="flex items-center gap-2.5 h-6">
+              <div className="flex items-center gap-3 h-8">
                 <span
-                  className="font-mono text-xs tracking-[0.3em]"
+                  className="font-mono text-sm tracking-[0.3em]"
                   style={{ color: '#5eead4' }}
                 >
                   {round.id}
                 </span>
-                <div className="w-1.5 h-1.5 rounded-full bg-[#5eead4]/40 relative z-10" />
+                <div className="w-2 h-2 rounded-full bg-[#5eead4]/40 relative z-10" />
               </div>
-              <div className="mt-5">
-                <span
-                  className="font-mono text-[10px] block"
-                  style={{ color: 'rgba(255,255,255,0.25)' }}
-                >
-                  {round.time}
-                </span>
+              <div className="mt-6">
                 <h3
-                  className="text-sm md:text-base font-bold mt-3"
+                  className="text-lg md:text-xl font-bold"
                   style={{
                     fontFamily: "'Orbitron', sans-serif",
                     color: 'rgba(255,255,255,0.85)',
@@ -101,8 +95,8 @@ export default function TimelineSection() {
 
       {/* Mobile */}
       <div className="md:hidden relative">
-        <div className="absolute left-[3px] top-[3px] bottom-[3px] w-px bg-white/[0.06]" />
-        <div className="space-y-10">
+        <div className="absolute left-[4px] top-[4px] bottom-[4px] w-px bg-white/[0.06]" />
+        <div className="space-y-12">
           {rounds.map((round, i) => (
             <motion.div
               key={round.id}
@@ -110,23 +104,17 @@ export default function TimelineSection() {
               initial="hidden"
               animate={inView ? 'visible' : 'hidden'}
               variants={columnVariant}
-              className="relative pl-6"
+              className="relative pl-8"
             >
-              <div className="absolute left-0 top-[3px] w-1.5 h-1.5 rounded-full bg-[#5eead4]/40" />
+              <div className="absolute left-0 top-[4px] w-2 h-2 rounded-full bg-[#5eead4]/40" />
               <span
-                className="font-mono text-xs tracking-[0.3em] block"
+                className="font-mono text-sm tracking-[0.3em] block"
                 style={{ color: '#5eead4' }}
               >
                 {round.id}
               </span>
-              <span
-                className="font-mono text-[10px] tracking-wider block mt-2"
-                style={{ color: 'rgba(255,255,255,0.45)' }}
-              >
-                {round.time}
-              </span>
               <h3
-                className="text-sm font-bold mt-2"
+                className="text-base font-bold mt-3"
                 style={{
                   fontFamily: "'Orbitron', sans-serif",
                   color: 'rgba(255,255,255,0.85)',

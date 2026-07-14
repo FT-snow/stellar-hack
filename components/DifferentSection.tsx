@@ -8,7 +8,7 @@ const items = [
     number: '01',
     title: 'Design Before Development',
     description:
-      'Every great product starts with a vision. Define your universe, its rules, and its story before writing code.',
+      'Every great product starts with a vision. Define your theme, its rules, and its story before writing code.',
   },
   {
     number: '02',
@@ -20,13 +20,13 @@ const items = [
     number: '03',
     title: 'Story-Driven Development',
     description:
-      "Your dashboard isn't just data — it's a narrative. Every widget tells the story of your universe.",
+      "Your dashboard isn't just data — it's a narrative. Every widget tells the story of your theme.",
   },
   {
     number: '04',
     title: 'Rapid Prototyping',
     description:
-      '48 hours to turn imagination into reality. Ship a working prototype that showcases your vision.',
+      'One day to turn imagination into reality. Ship a working prototype that showcases your vision.',
   },
 ]
 
@@ -58,16 +58,16 @@ export default function DifferentSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="flex flex-col md:flex-row gap-6 md:gap-16 pb-12 mb-12 border-b border-white/[0.06] last:border-b-0 last:mb-0 last:pb-0"
+              className="flex flex-col md:flex-row gap-6 md:gap-16 pb-14 mb-14 border-b border-white/[0.06] last:border-b-0 last:mb-0 last:pb-0"
             >
-              <span className="font-['Orbitron'] text-5xl md:text-6xl text-[rgba(94,234,212,0.15)] flex-shrink-0">
+              <span className="font-['Orbitron'] text-6xl md:text-7xl text-[rgba(94,234,212,0.15)] flex-shrink-0">
                 {item.number}
               </span>
               <div>
-                <h3 className="font-['Orbitron'] text-lg md:text-xl font-bold text-white/85 mb-2">
+                <h3 className="font-['Orbitron'] text-xl md:text-2xl font-bold text-white/85 mb-3">
                   {item.title}
                 </h3>
-                <p className="text-sm md:text-base text-white/45 max-w-2xl">
+                <p className="text-base md:text-lg text-white/50 max-w-2xl leading-relaxed">
                   {item.description}
                 </p>
               </div>

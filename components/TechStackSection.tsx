@@ -34,7 +34,7 @@ export default function TechStackSection() {
         TECH STACK
       </h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-5">
         {techItems.map((item) => (
           <motion.div
             key={item}
@@ -47,14 +47,14 @@ export default function TechStackSection() {
             <span className="font-mono text-xs" style={{ color: 'rgba(94,234,212,0.3)' }}>
               —
             </span>
-            <span className="font-mono text-xs tracking-wider" style={{ color: 'rgba(255,255,255,0.4)' }}>
+            <span className="font-mono text-sm tracking-wider" style={{ color: 'rgba(255,255,255,0.45)' }}>
               {item}
             </span>
           </motion.div>
         ))}
       </div>
 
-      <p className="font-mono text-[10px] mt-8" style={{ color: 'rgba(255,255,255,0.4)' }}>
+      <p className="font-mono text-xs mt-8" style={{ color: 'rgba(255,255,255,0.4)' }}>
         + any frontend-only framework
       </p>
     </section>

@@ -39,12 +39,12 @@ export default function ThemeExplorerSection() {
           </span>
         </div>
 
-        <div className="flex items-end justify-between mb-12">
+        <div className="flex items-end justify-between mb-14">
           <h2
             className="font-['Orbitron'] text-5xl md:text-7xl lg:text-8xl tracking-tight"
             style={{ color: 'rgba(255,255,255,0.92)' }}
           >
-            PICK A UNIVERSE
+            PICK A THEME
           </h2>
           <button
             onClick={() => {
@@ -71,15 +71,15 @@ export default function ThemeExplorerSection() {
               >
                 <button
                   onClick={() => setActive(isActive ? null : i)}
-                  className="w-full text-left py-6 border-b border-white/[0.04] group"
+                  className="w-full text-left py-7 border-b border-white/[0.04] group"
                 >
                   <h3
-                    className="font-['Orbitron'] text-sm font-bold transition-colors duration-300 group-hover:text-[rgba(94,234,212,0.8)]"
+                    className="font-['Orbitron'] text-base md:text-lg font-bold transition-colors duration-300 group-hover:text-[rgba(94,234,212,0.8)]"
                     style={{ color: isActive ? 'rgba(94,234,212,0.8)' : 'rgba(255,255,255,0.85)' }}
                   >
                     {t.name}
                   </h3>
-                  <p className="text-xs mt-1" style={{ color: 'rgba(255,255,255,0.35)' }}>
+                  <p className="text-sm mt-1.5" style={{ color: 'rgba(255,255,255,0.4)' }}>
                     {t.desc}
                   </p>
                   <AnimatePresence initial={false}>
@@ -91,11 +91,11 @@ export default function ThemeExplorerSection() {
                         transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                         className="overflow-hidden"
                       >
-                        <div className="pt-4">
-                          <span className="font-mono text-[9px] tracking-[0.35em]" style={{ color: 'rgba(255,255,255,0.25)' }}>
+                        <div className="pt-5">
+                          <span className="font-mono text-[10px] tracking-[0.35em]" style={{ color: 'rgba(255,255,255,0.3)' }}>
                             MISSION SEED
                           </span>
-                          <p className="text-sm mt-1.5" style={{ color: 'rgba(255,255,255,0.55)' }}>
+                          <p className="text-sm md:text-base mt-2 leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>
                             {t.seed}
                           </p>
                         </div>
@@ -113,7 +113,7 @@ export default function ThemeExplorerSection() {
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-6"
+            className="mt-8"
           >
             <button
               onClick={() => setShowAll(true)}
@@ -126,10 +126,10 @@ export default function ThemeExplorerSection() {
         )}
 
         <p
-          className="font-mono text-[10px] tracking-wider mt-8"
+          className="font-mono text-xs tracking-wider mt-8"
           style={{ color: 'rgba(255,255,255,0.4)' }}
         >
-          Stuck on ideation? Pick a theme — or invent your own universe entirely.
+          Stuck on ideation? Each theme comes with a built-in scenario and seed prompt.
         </p>
       </motion.div>
     </section>

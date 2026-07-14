@@ -28,13 +28,22 @@ export default function ScoringSection() {
       >
         SCORING
       </span>
+      <h2
+        className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-20"
+        style={{
+          fontFamily: "'Orbitron', sans-serif",
+          color: 'rgba(255,255,255,0.92)',
+        }}
+      >
+        SCORING
+      </h2>
 
       <div className="relative">
         <div
-          className="absolute -top-16 md:-top-24 lg:-top-32 left-0 pointer-events-none select-none"
+          className="absolute -top-20 md:-top-32 lg:-top-40 left-0 pointer-events-none select-none"
           style={{
             fontFamily: "'Orbitron', sans-serif",
-            fontSize: 'clamp(10rem, 18vw, 18rem)',
+            fontSize: 'clamp(10rem, 20vw, 22rem)',
             fontWeight: 700,
             lineHeight: 1,
             color: 'rgba(255,255,255,0.03)',
@@ -45,14 +54,14 @@ export default function ScoringSection() {
 
         <div className="relative z-10">
           <span
-            className="font-mono text-[10px] tracking-[0.5em] uppercase block mb-16"
-            style={{ color: 'rgba(255,255,255,0.25)' }}
+            className="font-mono text-xs tracking-[0.4em] uppercase block mb-16"
+            style={{ color: 'rgba(255,255,255,0.3)' }}
           >
             TOTAL MARKS
           </span>
 
-          <div className="max-w-3xl mb-8">
-            <div className="flex h-2 md:h-3 w-full overflow-hidden">
+          <div className="max-w-3xl mb-10">
+            <div className="flex h-3 md:h-4 w-full overflow-hidden">
               {scores.map((s) => (
                 <motion.div
                   key={s.label}
@@ -80,8 +89,8 @@ export default function ScoringSection() {
                 initial={{ opacity: 0 }}
                 animate={inView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="font-mono text-[10px] tracking-wider"
-                style={{ color: 'rgba(255,255,255,0.35)' }}
+                className="font-mono text-sm tracking-wider"
+                style={{ color: 'rgba(255,255,255,0.45)' }}
               >
                 {s.label}
               </motion.span>
