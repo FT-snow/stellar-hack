@@ -10,7 +10,7 @@ const faqs = [
   },
   {
     q: 'Can I participate alone?',
-    a: 'Teams of 2–4 are required. Find teammates on our Discord.',
+    a: 'Teams of 1–4 are allowed — solo, duo, trio, or squad. Find teammates on our WhatsApp group.',
   },
   {
     q: 'Do I need a backend?',
@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     q: 'Is it online?',
-    a: 'Yes. Fully online. All submissions happen through Unstop.',
+    a: 'Yes. Fully online. Round 1 submissions via Unstop + Google Form (link on WhatsApp group). Round 2 via Unstop.',
   },
   {
     q: 'Do I have to use the provided themes?',
@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     q: 'How does the Quiz Challenge work?',
-    a: '10 questions dropped anytime via Forms/polls during Round 2. 5 pts each, max 20 pts. First correct answer wins.',
+    a: "10 questions dropped anytime via Forms/polls during Round 2. 5 pts each, max 20 pts.",
   },
 ];
 

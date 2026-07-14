@@ -24,11 +24,11 @@ const rounds: Round[] = [
     title: 'Universe Design Challenge',
     marks: '30 MARKS',
     description:
-      'Submit ONE combined PDF containing Universe Card (1 page), Mission Card (1 page), and Dashboard Blueprint (1 page).',
+      'Submit a 3-slide PPT containing your Universe Card, Mission Card, and Dashboard Blueprint. Submit via Unstop + Google Form (link shared on WhatsApp group).',
     deliverables: [
-      'Universe Card — name, aesthetics, rules, lore',
-      'Mission Card — problem statement, goals, stakeholders',
-      'Dashboard Blueprint — wireframe, widget plan, data flow',
+      'Slide 1 — Universe Card: name, aesthetics, rules, lore',
+      'Slide 2 — Mission Card: problem statement, goals, stakeholders',
+      'Slide 3 — Dashboard Blueprint: wireframe, widget plan, data flow',
     ],
     evaluation: [
       { label: 'Creativity & Originality', score: 10 },
@@ -48,7 +48,7 @@ const rounds: Round[] = [
     deliverables: [
       'Working frontend dashboard',
       'Quiz Challenge completion (10 Qs, 5 pts each, max 20 pts)',
-      'Final submission 7:30–8 PM via Unstop',
+      'Final submission 7:30–8 PM via Unstop + Google Form',
     ],
     evaluation: [
       { label: 'UI/UX Design', score: 15 },

@@ -94,23 +94,42 @@ export default function HeroSection() {
           </div>
 
           <div className="flex items-end justify-end">
-            <motion.a
-              href="https://unstop.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="pointer-events-auto group flex items-center gap-3"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease, delay: 1.1 }}
-            >
-              <span
-                className="font-mono text-[10px] md:text-xs tracking-[0.2em] uppercase"
-                style={{ color: 'rgba(255,255,255,0.45)' }}
+            <div className="flex flex-col items-end gap-4">
+              <motion.a
+                href="https://unstop.com/hackathons/stellar-hack-manipal-university-mu-jaipur-1707195"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pointer-events-auto group flex items-center gap-3"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease, delay: 1.1 }}
               >
-                REGISTER NOW
-              </span>
-              <ArrowRight className="w-3.5 h-3.5 text-white/40 group-hover:text-white/80 group-hover:translate-x-0.5 transition-all duration-300" />
-            </motion.a>
+                <span
+                  className="font-mono text-[10px] md:text-xs tracking-[0.2em] uppercase"
+                  style={{ color: 'rgba(255,255,255,0.45)' }}
+                >
+                  REGISTER NOW
+                </span>
+                <ArrowRight className="w-3.5 h-3.5 text-white/40 group-hover:text-white/80 group-hover:translate-x-0.5 transition-all duration-300" />
+              </motion.a>
+              <motion.a
+                href="https://chat.whatsapp.com/EcLmNIBMWfr8z3yR9J33uw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pointer-events-auto group flex items-center gap-3"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease, delay: 1.3 }}
+              >
+                <span
+                  className="font-mono text-[10px] md:text-xs tracking-[0.2em] uppercase"
+                  style={{ color: 'rgba(94,234,212,0.4)' }}
+                >
+                  JOIN WHATSAPP GROUP
+                </span>
+                <ArrowRight className="w-3.5 h-3.5 text-[#5eead4]/40 group-hover:text-[#5eead4]/80 group-hover:translate-x-0.5 transition-all duration-300" />
+              </motion.a>
+            </div>
           </div>
         </div>
       </div>

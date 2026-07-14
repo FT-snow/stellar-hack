@@ -81,7 +81,7 @@ export const FAQS = [
   },
   {
     q: 'Can I participate alone?',
-    a: 'Teams of 2–4 are required. Find teammates on our Discord.',
+    a: 'Teams of 1–4 are allowed — solo, duo, trio, or squad. Find teammates on our WhatsApp group.',
   },
   {
     q: 'Do I need a backend?',
@@ -91,7 +91,7 @@ export const FAQS = [
     q: "What if I don't finish Round 1 deliverables?",
     a: 'Submit what you have. Partial submissions are still evaluated — quality over completeness.',
   },
-  { q: 'Is it online?', a: 'Yes. Fully online. All submissions happen through Unstop.' },
+  { q: 'Is it online?', a: 'Yes. Fully online. Round 1 submissions via Unstop + Google Form (link on WhatsApp group). Round 2 via Unstop.' },
   {
     q: 'Do I have to use the provided themes?',
     a: 'No. The Theme Explorer is just for inspiration. You can invent your own universe.',
